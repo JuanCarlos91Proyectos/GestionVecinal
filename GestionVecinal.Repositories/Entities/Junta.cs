@@ -18,7 +18,7 @@ namespace GestionVecinal.Repositories.Entities
 
         public string? Acta { get; set; }
 
-        public List<int> Asistencia { get; set; } = new List<int>();// Puede ser una lista de IDs de miembros que asistieron
-        private List<Miembro> Asistentes { get; set; } = new List<Miembro>(); // Puede ser una lista de miembros que asistieron
+        //public List<int> Asistencia { get; set; } = new List<int>();// Puede ser una lista de IDs de miembros que asistieron
+        //private List<Miembro> Asistentes { get; set; } = new List<Miembro>(); // Puede ser una lista de miembros que asistieron
     }
 }

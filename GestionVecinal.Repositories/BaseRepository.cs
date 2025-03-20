@@ -17,12 +17,26 @@ namespace GestionVecinal.Repositories
 
         public BaseRepository()
         {
+            bool newDatabase = false;
             var databasePath = Path.Combine(AppContext.BaseDirectory, Constants.DatabasePath);
             if (!File.Exists(databasePath))
             {
                 File.Create(databasePath).Dispose();
+                newDatabase = true;
             }
             _database = new SQLiteAsyncConnection(databasePath);
+            if (newDatabase)
+            {
+                _database.CreateTableAsync<Comunidad>().Wait();
+                _database.CreateTableAsync<Derrama>().Wait();
+                _database.CreateTableAsync<Factura>().Wait();
+                _database.CreateTableAsync<Incidencia>().Wait();
+                _database.CreateTableAsync<Junta>().Wait();
+                _database.CreateTableAsync<Miembro>().Wait();
+                _database.CreateTableAsync<Pago>().Wait();
+                _database.CreateTableAsync<Presidencia>().Wait();
+                _database.CreateTableAsync<Proveedor>().Wait();
+            }
         }
 
         //public Task<List<TodoItem>> GetItemsAsync()
