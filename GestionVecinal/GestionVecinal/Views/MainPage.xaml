@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionVecinal.Views.MainPage"
+             Title="Gestión de Comunidad">
+
+    <TabbedPage.Children>
+        <ContentPage Title="Comunidad">
+            <StackLayout Padding="10,0">
+                <Label Text="Gestión de Comunidades" />
+                <!-- Aquí puedes agregar controles para gestionar la entidad Comunidad -->
+            </StackLayout>
+        </ContentPage>
+
+        <ContentPage Title="Derramas">
+            <StackLayout>
+                <Label Text="Gestión de Derramas" />
+                <!-- Aquí puedes agregar controles para gestionar la entidad Derrama -->
+            </StackLayout>
+        </ContentPage>
+
+        <ContentPage Title="Facturas">
+            <StackLayout>
+                <Label Text="Gestión de Facturas" />
+                <!-- Aquí puedes agregar controles para gestionar la entidad Factura -->
+            </StackLayout>
+        </ContentPage>
+
+        <!-- Repite para las demás entidades (Incidencia, Junta, Miembro, Pago, Presidencia, Proveedor) -->
+
+    </TabbedPage.Children>
+</TabbedPage>
