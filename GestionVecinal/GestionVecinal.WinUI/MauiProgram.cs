@@ -37,6 +37,8 @@ namespace GestionVecinal.WinUI
         public static MauiAppBuilder RegisterViewsAndPages(this MauiAppBuilder builder)
         {
             builder.Services.AddTransient<MainPage>();
+            builder.Services.AddTransient<Login>();
+            builder.Services.AddTransient<CommunitySelect>();
             return builder;
         }
 

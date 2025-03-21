@@ -7,7 +7,7 @@
 		<RootNamespace>GestionVecinal</RootNamespace>
 		<UseMaui>true</UseMaui>
 		<Nullable>enable</Nullable>
-		<AssemblyVersion>1.0.64.0320</AssemblyVersion>
+		<AssemblyVersion>1.0.90.0321</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -34,7 +34,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\CommunitySelect.xaml.cs">
+	    <DependentUpon>CommunitySelect.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Views\Login.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\CommunitySelect.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

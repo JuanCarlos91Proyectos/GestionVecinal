@@ -18,8 +18,8 @@ public partial class Login : ContentPage
         if (username == "admin" && password == "1234") // Ejemplo básico
         {
 
-            var mainPage = _serviceProvider.GetService<MainPage>();
-            await Navigation.PushAsync(mainPage);
+            var page = _serviceProvider.GetService<CommunitySelect>();
+            await Navigation.PushAsync(page);
         }
         else
         {

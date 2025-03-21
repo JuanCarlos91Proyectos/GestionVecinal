@@ -5,10 +5,12 @@
              Title="Gestión de Comunidad">
 
     <TabbedPage.Children>
-        <ContentPage Title="Comunidad">
-            <StackLayout Padding="10,0">
+        <ContentPage Title="Comunidades">
+            <StackLayout Padding="10,0" HorizontalOptions="Start">
                 <Label Text="Gestión de Comunidades" />
-                <!-- Aquí puedes agregar controles para gestionar la entidad Comunidad -->
+                
+                <Button WidthRequest="200" HeightRequest="200" BackgroundColor="Red" Text="Comunidad1">
+                </Button>
             </StackLayout>
         </ContentPage>
 
