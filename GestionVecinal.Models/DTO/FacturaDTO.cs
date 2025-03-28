@@ -1,6 +1,6 @@
-﻿namespace GestionVecinal.Models
+﻿namespace GestionVecinal.Models.DTO
 {
-    public  class FacturaDTO
+    public class FacturaDTO
     {
         public int Id { get; set; }
         public int ProveedorId { get; set; } // Foreign key a Miembros

@@ -1,4 +1,4 @@
-﻿namespace GestionVecinal.Models
+﻿namespace GestionVecinal.Models.DTO
 {
     public class ProveedorDTO
     {

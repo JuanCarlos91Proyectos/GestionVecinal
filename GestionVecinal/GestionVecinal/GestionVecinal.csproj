@@ -7,7 +7,7 @@
 		<RootNamespace>GestionVecinal</RootNamespace>
 		<UseMaui>true</UseMaui>
 		<Nullable>enable</Nullable>
-		<AssemblyVersion>1.0.90.0321</AssemblyVersion>
+		<AssemblyVersion>1.0.134.0328</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -20,6 +20,10 @@
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Remove="Styles.xaml" />
 	</ItemGroup>
 
 	<ItemGroup>

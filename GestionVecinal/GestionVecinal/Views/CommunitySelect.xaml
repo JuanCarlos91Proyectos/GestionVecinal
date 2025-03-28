@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GestionVecinal.Views.CommunitySelect"
              Title="Listado de comunidades"
-             BackgroundColor="#F5F5F5">
-    <StackLayout Padding="10, 20" x:Name="ComunidadesPicker" HorizontalOptions="FillAndExpand">
+             BackgroundColor="#252525">
+    <StackLayout Padding="10, 20" x:Name="ComunidadesPicker" Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Start">
         
     </StackLayout>
 </ContentPage>

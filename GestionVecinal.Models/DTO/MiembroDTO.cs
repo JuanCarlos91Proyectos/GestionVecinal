@@ -1,6 +1,6 @@
 ﻿using GestionVecinal.Models.Enums;
 
-namespace GestionVecinal.Models
+namespace GestionVecinal.Models.DTO
 {
     public class MiembroDTO
     {

@@ -1,4 +1,4 @@
-﻿using GestionVecinal.Models;
+﻿using GestionVecinal.Models.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;

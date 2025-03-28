@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using GestionVecinal.Models;
+using GestionVecinal.Models.DTO;
 using GestionVecinal.Repositories.Entities;
 using System;
 using System.Collections.Generic;

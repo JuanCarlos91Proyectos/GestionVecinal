@@ -1,11 +1,16 @@
+using GestionVecinal.Models;
+using Microsoft.Extensions.Configuration;
+
 namespace GestionVecinal.Views;
 
 public partial class Login : ContentPage
 {
     private readonly IServiceProvider _serviceProvider;
-    public Login(IServiceProvider serviceProvider)
+    private readonly AppSettings _appSettings;
+    public Login(IServiceProvider serviceProvider, AppSettings appSettings)
 	{
         _serviceProvider = serviceProvider;
+        _appSettings = appSettings;
         InitializeComponent();
 	}
 

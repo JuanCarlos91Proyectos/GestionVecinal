@@ -1,4 +1,4 @@
-using GestionVecinal.Models;
+using GestionVecinal.Models.DTO;
 using GestionVecinal.Services;
 
 namespace GestionVecinal.Views;
@@ -41,13 +41,15 @@ public partial class CommunitySelect : ContentPage
         => new Button
         {
             Text = text,
-            TextColor = Color.FromArgb("#333333"),
+            TextColor = Color.FromArgb("#AAAAAA"),
             BackgroundColor = Color.FromArgb(background),
             Padding = new Thickness(10, 20),
             WidthRequest = 120,
-            HeightRequest = 80,
+            HeightRequest = 100,
             Margin = new Thickness(10),
-            FontSize = 14
+            FontSize = 14,
+            LineBreakMode = LineBreakMode.WordWrap,
+            FontAttributes = FontAttributes.Bold
         };
     
     private void Button_Clicked(object sender, EventArgs e)
@@ -63,6 +65,8 @@ public partial class CommunitySelect : ContentPage
         Button button = (Button)sender;
         VisualStateManager.GoToState(button, "Focused");
         button.BackgroundColor = Color.FromArgb("#4CAF50");
+        button.WidthRequest = button.Width * 1.5;
+        button.HeightRequest = button.Height * 1.5;
     }
 
     private void Button_Unfocused(object sender, EventArgs e)
@@ -71,6 +75,8 @@ public partial class CommunitySelect : ContentPage
         Button button = (Button)sender;
         VisualStateManager.GoToState(button, "Normal");
         button.BackgroundColor = Color.FromArgb("#FF0000");
+        button.WidthRequest = button.Width / 3 * 2;
+        button.HeightRequest = button.Height / 3 * 2;
     }
 
     private async Task<List<ComunidadDTO>> GetComunidades()
