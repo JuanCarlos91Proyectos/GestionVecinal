@@ -2,33 +2,33 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GestionVecinal.Views.Login"
-             Title="Login - Gestion Vecinal" 
+             Title="Login - Gestion Vecinal"
              BackgroundColor="#252525">
     <StackLayout Padding="50">
         <!-- Título -->
-        <Label Text="Bienvenid@ a Gestión Vecinal"
+        <Label Text="{Binding Labels.Welcome}"
                Style="{StaticResource title}" />
         <!-- Color oscuro para mejor contraste -->
 
         <!-- Campo de Usuario -->
-        <Label Text="Usuario"
+        <Label Text="{Binding Labels.Username}"
                Style="{StaticResource label}" />
         <!-- Color gris oscuro -->
         <Entry x:Name="UsernameEntry"
-               Placeholder="Ingrese su usuario"
+               Placeholder="{Binding Placeholders.Username}"
                Style="{StaticResource entry}" />
         <!-- Color gris para el placeholder -->
 
         <!-- Campo de Contraseña -->
-        <Label Text="Contraseña"
+        <Label Text="{Binding Labels.Password}"
                Style="{StaticResource label}" />
         <Entry x:Name="PasswordEntry"
-               Placeholder="Ingrese su contraseña"
+               Placeholder="{Binding Placeholders.Password}"
                IsPassword="True"
                Style="{StaticResource entry}" />
 
         <!-- Botón de Iniciar Sesión -->
-        <Button Text="Iniciar Sesión"
+        <Button Text="{Binding Labels.Login}"
                 Clicked="OnLoginClicked"
                 Style="{StaticResource button}" />
 

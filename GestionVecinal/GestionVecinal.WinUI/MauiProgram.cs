@@ -1,4 +1,5 @@
 ﻿using GestionVecinal.Models;
+using GestionVecinal.Models.ViewModels;
 using GestionVecinal.Repositories;
 using GestionVecinal.Services;
 using GestionVecinal.Services.Mappers;
@@ -15,10 +16,9 @@ namespace GestionVecinal.WinUI
             var builder = MauiApp.CreateBuilder()
                 .RegisterServices()
                 .RegisterRepositories()
-                .RegisterViewsAndPages()
-                .RegisterAutoMapper();
-
-            builder.AddAppSettings();
+                .RegisterViewsAndViewModels()
+                .RegisterAutoMapper()
+                .AddAppSettings();
 
             
 
@@ -40,11 +40,13 @@ namespace GestionVecinal.WinUI
             return builder;
         }
 
-        private static MauiAppBuilder RegisterViewsAndPages(this MauiAppBuilder builder)
+        private static MauiAppBuilder RegisterViewsAndViewModels(this MauiAppBuilder builder)
         {
             builder.Services.AddTransient<MainPage>();
             builder.Services.AddTransient<Login>();
             builder.Services.AddTransient<CommunitySelect>();
+
+            builder.Services.AddTransient<LoginViewModel>();
             return builder;
         }
 
@@ -53,11 +55,12 @@ namespace GestionVecinal.WinUI
             builder.Services.AddAutoMapper(typeof(ComunidadMappingProfile));
             return builder;
         }
-        private static void AddAppSettings(this MauiAppBuilder builder)
+        private static MauiAppBuilder AddAppSettings(this MauiAppBuilder builder)
         {
-            builder.ConfigureAppSettings("appsettings.json");
+            builder = builder.ConfigureAppSettings("appsettings.json");
+            return builder;
         }
-        private static void ConfigureAppSettings(this MauiAppBuilder builder, string fileName)
+        private static MauiAppBuilder ConfigureAppSettings(this MauiAppBuilder builder, string fileName)
         {
             var assembly = Assembly.GetExecutingAssembly();
             
@@ -69,6 +72,7 @@ namespace GestionVecinal.WinUI
             
             builder.Configuration.GetSection("AppSettings").Get<AppSettings>();
             builder.Services.AddSingleton<AppSettings>(config.GetSection("AppSettings").Get<AppSettings>());
+            return builder;
         }
     }
 }

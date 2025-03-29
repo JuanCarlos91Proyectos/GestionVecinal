@@ -1,34 +1,33 @@
 using GestionVecinal.Models;
+using GestionVecinal.Models.ViewModels;
 using Microsoft.Extensions.Configuration;
 
 namespace GestionVecinal.Views;
 
 public partial class Login : ContentPage
 {
-    private readonly IServiceProvider _serviceProvider;
-    private readonly AppSettings _appSettings;
-    public Login(IServiceProvider serviceProvider, AppSettings appSettings)
+    public readonly LoginViewModel _viewModel;
+    public Login(LoginViewModel viewModel)
 	{
-        _serviceProvider = serviceProvider;
-        _appSettings = appSettings;
+        _viewModel = viewModel;
         InitializeComponent();
-	}
+        BindingContext = viewModel.appSettings;
+    }
 
     private async void OnLoginClicked(object sender, EventArgs e)
     {
         string username = UsernameEntry.Text;
         string password = PasswordEntry.Text;
-
-        // Aquí puedes agregar la lógica para validar el usuario y contraseña
-        if (username == "admin" && password == "1234") // Ejemplo básico
+        var loginResult = _viewModel.ValidateLogin(username, password);
+        if (loginResult.Success)
         {
 
-            var page = _serviceProvider.GetService<CommunitySelect>();
+            var page = _viewModel.serviceProvider.GetService<CommunitySelect>();
             await Navigation.PushAsync(page);
         }
         else
         {
-            ErrorMessage.Text = "Usuario o contraseña incorrectos";
+            ErrorMessage.Text = loginResult.Error?.Message;
             ErrorMessage.IsVisible = true;
         }
     }

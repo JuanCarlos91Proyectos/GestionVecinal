@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestionVecinal.Models.Constants
+namespace GestionVecinal.Models
 {
     public static class Constants
     {
