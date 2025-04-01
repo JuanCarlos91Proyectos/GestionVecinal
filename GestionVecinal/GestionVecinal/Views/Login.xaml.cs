@@ -11,7 +11,7 @@ public partial class Login : ContentPage
 	{
         _viewModel = viewModel;
         InitializeComponent();
-        BindingContext = viewModel.appSettings;
+        BindingContext = viewModel;
     }
 
     private async void OnLoginClicked(object sender, EventArgs e)
