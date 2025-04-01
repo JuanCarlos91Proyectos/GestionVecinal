@@ -9,23 +9,21 @@ namespace GestionVecinal.Models.ViewModels
 {
     public partial class BaseViewModel : INotifyPropertyChanged
     {
-        public AppSettings _appSettings;
-        public AppSettings appSettings
+        private AppSettings _appSettings;
+        public AppSettings AppSettings
         {
             get { return _appSettings; }
             set
             {
                 _appSettings = value;
-                OnPropertyChanged(nameof(appSettings));
+                OnPropertyChanged(nameof(AppSettings));
             }
         }
-        public readonly IServiceProvider serviceProvider;
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public BaseViewModel(IServiceProvider serviceProvider, AppSettings appSettings)
+        public BaseViewModel(AppSettings appSettings)
         {
-            this.serviceProvider = serviceProvider;
             this._appSettings = appSettings;
         }
 

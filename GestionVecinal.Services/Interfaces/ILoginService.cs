@@ -1,4 +1,4 @@
-﻿using GestionVecinal.Models.DTO;
+﻿using GestionVecinal.Models.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace GestionVecinal.Services.Interfaces
 {
-    public interface IComunidadesService
+    public interface ILoginService
     {
-        Task<List<ComunidadDTO>> GetComunidades();
+        Response<bool> ValidateLogin(string username, string password);
     }
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Window xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionVecinal.Views.AddComunidad"
+             Title="Añadir comunidad">
+    <ContentPage BackgroundColor="#252525">
+        <StackLayout Padding="10, 20"  Orientation="Vertical" HorizontalOptions="StartAndExpand" VerticalOptions="Start">
+            <Label Text="Nombre de la comunidad" />
+            <Entry x:Name="NombreComunidad" />
+            <Label Text="Dirección" />
+            <Entry x:Name="DireccionComunidad" />
+            <Label Text="Número de viviendas" />
+            <Entry x:Name="NumeroViviendas" />
+            <Button Text="Añadir comunidad" Clicked="OnAddComunidadClicked" />
+        </StackLayout>
+           
+    </ContentPage>
+</Window>

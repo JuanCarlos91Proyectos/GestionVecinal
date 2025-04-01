@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using GestionVecinal.Models.DTO;
 using GestionVecinal.Repositories;
+using GestionVecinal.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -5,20 +5,20 @@ namespace GestionVecinal.Models.ViewModels
 {
     public partial class LoginViewModel : BaseViewModel, INotifyPropertyChanged
     {
-        public LoginViewModel(IServiceProvider serviceProvider, AppSettings appSettings) : base(serviceProvider, appSettings)
+        public LoginViewModel(AppSettings appSettings) : base(appSettings)
         {
         }
 
         public Response<bool> ValidateLogin(string username, string password)
         {
             var response = new Response<bool>();
-            if (username == _appSettings.Admin && password == _appSettings.Password)
+            if (username == AppSettings.Admin && password == AppSettings.Password)
             {
                 response.setValue(true, true, string.Empty);
             }
             else
             {
-                response.setError(_appSettings.Errors.Login, string.Empty);
+                response.setError(AppSettings.Errors.Login, string.Empty);
             }
             return response;
         }

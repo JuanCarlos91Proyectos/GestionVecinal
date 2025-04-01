@@ -2,6 +2,7 @@
 using GestionVecinal.Models.ViewModels;
 using GestionVecinal.Repositories;
 using GestionVecinal.Services;
+using GestionVecinal.Services.Interfaces;
 using GestionVecinal.Services.Mappers;
 using GestionVecinal.Views;
 using Microsoft.Extensions.Configuration;
@@ -31,6 +32,7 @@ namespace GestionVecinal.WinUI
         private static MauiAppBuilder RegisterServices(this MauiAppBuilder builder)
         {
             builder.Services.AddTransient<IComunidadesService, ComunidadesService>();
+            builder.Services.AddTransient<ILoginService, LoginService>();
             return builder;
         }
 
@@ -42,11 +44,14 @@ namespace GestionVecinal.WinUI
 
         private static MauiAppBuilder RegisterViewsAndViewModels(this MauiAppBuilder builder)
         {
-            builder.Services.AddTransient<MainPage>();
+            
             builder.Services.AddTransient<Login>();
             builder.Services.AddTransient<CommunitySelect>();
+            builder.Services.AddTransient<MainPage>();
+
 
             builder.Services.AddTransient<LoginViewModel>();
+            builder.Services.AddTransient<CommunitySelectViewModel>();
             return builder;
         }
 

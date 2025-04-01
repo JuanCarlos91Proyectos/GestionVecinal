@@ -6,29 +6,29 @@
              BackgroundColor="#252525">
     <StackLayout Padding="50">
         <!-- Título -->
-        <Label Text="{Binding appSettings.Labels.Welcome}"
+        <Label Text="{Binding AppSettings.Labels.Welcome}"
                Style="{StaticResource title}" />
         <!-- Color oscuro para mejor contraste -->
 
         <!-- Campo de Usuario -->
-        <Label Text="{Binding appSettings.Labels.Username}"
+        <Label Text="{Binding AppSettings.Labels.Username}"
                Style="{StaticResource label}" />
         <!-- Color gris oscuro -->
         <Entry x:Name="UsernameEntry"
-               Placeholder="{Binding appSettings.Placeholders.Username}"
+               Placeholder="{Binding AppSettings.Placeholders.Username}"
                Style="{StaticResource entry}" />
         <!-- Color gris para el placeholder -->
 
         <!-- Campo de Contraseña -->
-        <Label Text="{Binding appSettings.Labels.Password}"
+        <Label Text="{Binding AppSettings.Labels.Password}"
                Style="{StaticResource label}" />
         <Entry x:Name="PasswordEntry"
-               Placeholder="{Binding appSettings.Placeholders.Password}"
+               Placeholder="{Binding AppSettings.Placeholders.Password}"
                IsPassword="True"
                Style="{StaticResource entry}" />
 
         <!-- Botón de Iniciar Sesión -->
-        <Button Text="{Binding appSettings.Labels.Login}"
+        <Button Text="{Binding AppSettings.Labels.Login}"
                 Clicked="OnLoginClicked"
                 Style="{StaticResource button}" />
 
