@@ -1,20 +1,26 @@
 using GestionVecinal.Models.ViewModels;
+using GestionVecinal.Services.Interfaces;
 
 namespace GestionVecinal.Views;
 
 public partial class AddComunidad : Window
 {
 	public AddComunidadViewModel _viewModel;
-	public AddComunidad(AddComunidadViewModel viewModel)
+    private IComunidadesService _service;
+	public AddComunidad(IComunidadesService comunidadesService ,AddComunidadViewModel viewModel)
 	{
+        _service = comunidadesService;
         _viewModel = viewModel;
         InitializeComponent();
         BindingContext = viewModel;
     }
 
-    private void OnAddComunidadClicked(object sender, EventArgs e)
+    private async void OnAddComunidadClicked(object sender, EventArgs e)
     {
-        Console.WriteLine("Datos añadidos");
-        var x = _viewModel.Comunidad;
+        var response = await _service.AddAsync(_viewModel.Comunidad);
+        if (!response.Success)
+            await App.Current.MainPage.DisplayAlert("Error", response.Error.Message, "OK");
+        else
+            Application.Current.CloseWindow(this);
     }
 }

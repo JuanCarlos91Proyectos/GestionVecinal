@@ -14,6 +14,7 @@ namespace GestionVecinal.Services.Mappers
         public ComunidadMappingProfile()
         {
             CreateMap<Comunidad, ComunidadDTO>();
+            CreateMap<ComunidadDTO, Comunidad>();
         }
     }
 }

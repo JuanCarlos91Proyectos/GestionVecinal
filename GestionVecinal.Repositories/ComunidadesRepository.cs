@@ -15,9 +15,24 @@ namespace GestionVecinal.Repositories
 
         }
 
+        
+
         public async Task<List<Comunidad>> GetComunidades()
         {
             return await _database.Table<Comunidad>().ToListAsync();
+        }
+
+        public async Task<bool> AddAsync(Comunidad comunidad)
+        {
+            try
+            {
+                await _database.InsertAsync(comunidad);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
     }
 }

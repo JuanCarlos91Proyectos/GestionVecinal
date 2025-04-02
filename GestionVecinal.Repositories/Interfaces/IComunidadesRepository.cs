@@ -10,5 +10,7 @@ namespace GestionVecinal.Repositories
     public interface IComunidadesRepository : IBaseRepository
     {
         Task<List<Comunidad>> GetComunidades();
+
+        Task<bool> AddAsync(Comunidad comunidad);
     }
 }

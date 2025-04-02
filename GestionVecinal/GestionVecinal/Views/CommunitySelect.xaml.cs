@@ -50,4 +50,9 @@ public partial class CommunitySelect : ContentPage
         this.ComunidadesPicker.Children.Clear();
         OnStart().ConfigureAwait(false);
     }
+
+    private void ContentPage_Disappearing(object sender, EventArgs e)
+    {
+        Application.Current.Quit();
+    }
 }

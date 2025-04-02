@@ -1,4 +1,5 @@
-﻿using GestionVecinal.Models.DTO;
+﻿using GestionVecinal.Models.Common;
+using GestionVecinal.Models.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,6 @@ namespace GestionVecinal.Services.Interfaces
     public interface IComunidadesService
     {
         Task<List<ComunidadDTO>> GetComunidades();
+        Task<Response<bool>> AddAsync(ComunidadDTO comunidad);
     }
 }
