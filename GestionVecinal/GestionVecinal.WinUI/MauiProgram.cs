@@ -1,4 +1,5 @@
-﻿using GestionVecinal.Models;
+﻿using CommunityToolkit.Maui;
+using GestionVecinal.Models;
 using GestionVecinal.Models.ViewModels;
 using GestionVecinal.Repositories;
 using GestionVecinal.Services;
@@ -47,11 +48,14 @@ namespace GestionVecinal.WinUI
             
             builder.Services.AddTransient<Login>();
             builder.Services.AddTransient<CommunitySelect>();
-            builder.Services.AddTransient<MainPage>();
+            builder.Services.AddTransient<AddComunidad>();
+            //builder.Services.AddTransient<MainPage>();
 
 
             builder.Services.AddTransient<LoginViewModel>();
             builder.Services.AddTransient<CommunitySelectViewModel>();
+            //builder.Services.AddTransient<MainPageViewModel>();
+            builder.Services.AddTransient<AddComunidadViewModel>();
             return builder;
         }
 

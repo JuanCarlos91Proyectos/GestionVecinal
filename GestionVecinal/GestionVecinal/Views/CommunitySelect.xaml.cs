@@ -8,9 +8,11 @@ public partial class CommunitySelect : ContentPage
 {
     private readonly IComunidadesService _comunidadesService;
     public readonly CommunitySelectViewModel _viewModel;
-    public CommunitySelect(IComunidadesService comunidadesService, CommunitySelectViewModel viewModel)
+    private readonly IServiceProvider _serviceProvider;
+    public CommunitySelect(IComunidadesService comunidadesService, CommunitySelectViewModel viewModel, IServiceProvider serviceProvider)
     {
         this._comunidadesService = comunidadesService;
+        this._serviceProvider = serviceProvider;
         _viewModel = viewModel;
         OnStart().ConfigureAwait(false);
         InitializeComponent();
@@ -34,8 +36,9 @@ public partial class CommunitySelect : ContentPage
 
     private void HandleAddNewCommunity(object sender, EventArgs e)
     {
-        ComunidadesPicker.IsVisible = false;
-        Window window = new AddComunidad();
+        this.ComunidadesPicker.IsVisible = false;
+        this.BusyMessage.IsVisible = true;
+        Window window = _serviceProvider.GetService<AddComunidad>();
         window.Destroying += OnCloseAddNewCommunity;
         Application.Current?.OpenWindow(window);
     }
@@ -43,6 +46,7 @@ public partial class CommunitySelect : ContentPage
     private void OnCloseAddNewCommunity(object sender, EventArgs e)
     {
         this.ComunidadesPicker.IsVisible = true;
+        this.BusyMessage.IsVisible = false;
         this.ComunidadesPicker.Children.Clear();
         OnStart().ConfigureAwait(false);
     }

@@ -4,7 +4,11 @@
              x:Class="GestionVecinal.Views.CommunitySelect"
              Title="Listado de comunidades"
              BackgroundColor="#252525">
-    <StackLayout Padding="10, 20" x:Name="ComunidadesPicker" Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Start">
-        
+    <StackLayout Padding="10, 20">
+        <StackLayout x:Name="ComunidadesPicker"  Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Start"/>
+        <Label x:Name="BusyMessage" 
+               Text="{Binding AppSettings.Labels.OpenedNewCommunityWindow}" 
+               IsVisible="False"
+               Style="{StaticResource busyMessage}"/>
     </StackLayout>
 </ContentPage>

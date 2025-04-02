@@ -8,6 +8,9 @@ namespace GestionVecinal.Repositories.Entities
         public int Id { get; set; }
         [NotNull]
         public string Direccion { get; set; } = string.Empty;
+        public string Cp { get; set; } = string.Empty;
+        public string Poblacion { get; set; } = string.Empty;
+        public string Provincia { get; set; } = string.Empty;
         [NotNull]
         public int NumeroViviendas { get; set; }
         [NotNull]

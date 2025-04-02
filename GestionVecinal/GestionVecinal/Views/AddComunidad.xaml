@@ -1,17 +1,49 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Window xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="GestionVecinal.Views.AddComunidad"
-             Title="Añadir comunidad">
+             Title="Añadir comunidad"
+            Height="650" Width="350">
     <ContentPage BackgroundColor="#252525">
-        <StackLayout Padding="10, 20"  Orientation="Vertical" HorizontalOptions="StartAndExpand" VerticalOptions="Start">
-            <Label Text="Nombre de la comunidad" />
-            <Entry x:Name="NombreComunidad" />
-            <Label Text="Dirección" />
-            <Entry x:Name="DireccionComunidad" />
-            <Label Text="Número de viviendas" />
-            <Entry x:Name="NumeroViviendas" />
-            <Button Text="Añadir comunidad" Clicked="OnAddComunidadClicked" />
+        <StackLayout Padding="0, 30"  Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Start">
+            
+            <Label Text="Dirección de la comunidad" 
+                   Style="{StaticResource label}"/>
+            <Entry x:Name="Direccion" 
+                   Text="{Binding Comunidad.Direccion}" 
+                   Style="{StaticResource entry}"/>
+            <Label Text="Código Postal" 
+                   Style="{StaticResource label}"/>
+            <Entry x:Name="Cp" 
+                   Text="{Binding Comunidad.Cp}" 
+                   Style="{StaticResource entry}"/>
+            <Label Text="Población" 
+                   Style="{StaticResource label}"/>
+            <Entry x:Name="Poblacion" 
+                   Text="{Binding Comunidad.Poblacion}"
+                   Style="{StaticResource entry}"/>
+            <Label Text="Provincia" 
+                   Style="{StaticResource label}"/>
+            <Entry x:Name="Provincia" 
+                   Text="{Binding Comunidad.Provincia}"
+                   Style="{StaticResource entry}"/>
+            <Label Text="Número de viviendas" 
+                   Style="{StaticResource label}"/>
+            <Entry x:Name="NumeroViviendas" 
+                   Text="{Binding Comunidad.NumeroViviendas}" 
+                   Style="{StaticResource entry}"
+                   Keyboard="Numeric"/>
+            <Label Text="Cuota mensual" 
+                   Style="{StaticResource label}"/>
+            <Entry x:Name="Cuota" 
+                   Text="{Binding Comunidad.Cuota}" 
+                   Style="{StaticResource entry}"
+                   Keyboard="Numeric"/>
+
+            <Button Text="Añadir comunidad" 
+                    Clicked="OnAddComunidadClicked" 
+                    Style="{StaticResource button}"/>
         </StackLayout>
            
     </ContentPage>

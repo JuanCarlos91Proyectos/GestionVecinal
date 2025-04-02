@@ -7,7 +7,7 @@
 		<RootNamespace>GestionVecinal</RootNamespace>
 		<UseMaui>true</UseMaui>
 		<Nullable>enable</Nullable>
-		<AssemblyVersion>1.0.179.0401</AssemblyVersion>
+		<AssemblyVersion>1.0.194.0402</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -27,6 +27,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui" Version="11.2.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.50" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
 		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
