@@ -54,6 +54,7 @@ namespace GestionVecinal
             builder.Services.AddTransient<Login>();
             builder.Services.AddTransient<CommunitySelect>();
             builder.Services.AddTransient<AddComunidad>();
+            builder.Services.AddTransient<ViewComunidad>();
             //builder.Services.AddTransient<MainPage>();
 
 
@@ -61,6 +62,7 @@ namespace GestionVecinal
             builder.Services.AddTransient<CommunitySelectViewModel>();
             //builder.Services.AddTransient<MainPageViewModel>();
             builder.Services.AddTransient<AddComunidadViewModel>();
+            builder.Services.AddTransient<ViewComunidadViewModel>();
             return builder;
         }
 

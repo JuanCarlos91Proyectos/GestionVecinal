@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionVecinal.Views.ViewComunidad"
+             Title="{Binding Comunidad.Direccion}"
+             HeightRequest="800">
+    <TabbedPage.Children>
+        <ContentPage Title="{Binding AppSettings.Labels.ViewComunidadLabels.Comunidad}" HeightRequest="800" >
+            <StackLayout Padding="30,0">
+                <Label Text="Dirección" 
+                       Style="{StaticResource label}"/>
+                <Entry Text="{Binding Comunidad.Direccion}" 
+                       Style="{StaticResource entry}"
+                       IsReadOnly="True"/>
+                <Label Text="Código postal" 
+                       Style="{StaticResource label}"/>
+                <Entry Text="{Binding Comunidad.Cp}" 
+                       Style="{StaticResource entry}"
+                       IsReadOnly="True"/>
+                <Label Text="Población" 
+                       Style="{StaticResource label}"/>
+                <Entry Text="{Binding Comunidad.Poblacion}" 
+                       Style="{StaticResource entry}"
+                       IsReadOnly="True"/>
+                <Label Text="Provincia" 
+                       Style="{StaticResource label}"/>
+                <Entry Text="{Binding Comunidad.Provincia}" 
+                       Style="{StaticResource entry}"
+                       IsReadOnly="True"/>
+                <Label Text="Número de viviendas" 
+                       Style="{StaticResource label}"/>
+                <Entry Text="{Binding Comunidad.NumeroViviendas}" 
+                       Style="{StaticResource entry}"
+                       IsReadOnly="True"/>
+                <Label Text="Cuota de la comunidad" 
+                       Style="{StaticResource label}"/>
+                <Entry Text="{Binding Comunidad.Cuota}" 
+                       Style="{StaticResource entry}"
+                       Keyboard="Numeric"/>
+                <Button Text="Editar comunidad" 
+                        Style="{StaticResource button}"/>
+            </StackLayout>
+        </ContentPage>
+
+        <ContentPage Title="{Binding AppSettings.Labels.ViewComunidadLabels.Miembros}">
+            <StackLayout>
+                <Label Text="Gestión de Facturas" />
+                <!-- Aquí puedes agregar controles para gestionar la entidad Factura -->
+            </StackLayout>
+        </ContentPage>
+
+        <ContentPage Title="{Binding AppSettings.Labels.ViewComunidadLabels.Presidentes}">
+            <StackLayout>
+                <Label Text="Gestión de Facturas" />
+                <!-- Aquí puedes agregar controles para gestionar la entidad Factura -->
+            </StackLayout>
+        </ContentPage>
+
+        <ContentPage Title="{Binding AppSettings.Labels.ViewComunidadLabels.Derramas}">
+            <StackLayout>
+                <Label Text="Gestión de Derramas" />
+                <!-- Aquí puedes agregar controles para gestionar la entidad Derrama -->
+            </StackLayout>
+        </ContentPage>
+
+        <ContentPage Title="{Binding AppSettings.Labels.ViewComunidadLabels.Proveedores}">
+            <StackLayout>
+                <Label Text="Gestión de Facturas" />
+                <!-- Aquí puedes agregar controles para gestionar la entidad Factura -->
+            </StackLayout>
+        </ContentPage>
+
+        <ContentPage Title="{Binding AppSettings.Labels.ViewComunidadLabels.Facturas}">
+            <StackLayout>
+                <Label Text="Gestión de Facturas" />
+                <!-- Aquí puedes agregar controles para gestionar la entidad Factura -->
+            </StackLayout>
+        </ContentPage>
+
+        <ContentPage Title="{Binding AppSettings.Labels.ViewComunidadLabels.Juntas}">
+            <StackLayout>
+                <Label Text="Gestión de Facturas" />
+                <!-- Aquí puedes agregar controles para gestionar la entidad Factura -->
+            </StackLayout>
+        </ContentPage>
+
+        <ContentPage Title="{Binding AppSettings.Labels.ViewComunidadLabels.Incidencias}">
+            <StackLayout>
+                <Label Text="Gestión de Facturas" />
+                <!-- Aquí puedes agregar controles para gestionar la entidad Factura -->
+            </StackLayout>
+        </ContentPage>
+
+
+
+        <!-- Repite para las demás entidades (Incidencia, Junta, Miembro, Pago, Presidencia, Proveedor) -->
+
+    </TabbedPage.Children>
+</TabbedPage>

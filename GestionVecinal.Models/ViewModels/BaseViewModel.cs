@@ -13,11 +13,7 @@ namespace GestionVecinal.Models.ViewModels
         public AppSettings AppSettings
         {
             get { return _appSettings; }
-            set
-            {
-                _appSettings = value;
-                OnPropertyChanged(nameof(AppSettings));
-            }
+            set { _appSettings = value; OnPropertyChanged(nameof(AppSettings)); }
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

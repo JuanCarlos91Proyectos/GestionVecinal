@@ -16,7 +16,20 @@
         public string Password { get; set; } = string.Empty;
         public string Login { get; set; } = string.Empty;
         public string OpenedNewCommunityWindow { get; set;} = string.Empty;
+        public ViewComunidadLabels ViewComunidadLabels { get; set; } = new ViewComunidadLabels();
 
+    }
+
+    public class ViewComunidadLabels
+    {
+        public string Comunidad { get; set; } = string.Empty;
+        public string Miembros { get; set; } = string.Empty;
+        public string Facturas { get; set; } = string.Empty;
+        public string Proveedores { get; set; } = string.Empty;
+        public string Juntas { get; set; } = string.Empty;
+        public string Derramas { get; set; } = string.Empty;
+        public string Incidencias { get; set; } = string.Empty;
+        public string Presidentes { get; set; } = string.Empty;
     }
 
     public class Errors

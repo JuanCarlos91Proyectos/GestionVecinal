@@ -9,11 +9,7 @@ namespace GestionVecinal.Models.ViewModels
     public partial class CommunitySelectViewModel : BaseViewModel, INotifyPropertyChanged
     {
         private List<ComunidadDTO> _comunidades = [];
-        public List<ComunidadDTO> Comunidades { get { return _comunidades; } set
-            {
-                _comunidades = value;
-                OnPropertyChanged(nameof(Comunidades));
-            }
+        public List<ComunidadDTO> Comunidades { get { return _comunidades; } set { _comunidades = value; OnPropertyChanged(nameof(Comunidades)); }
         }
         public CommunitySelectViewModel(AppSettings appSettings) : base(appSettings)
         {
@@ -21,8 +17,8 @@ namespace GestionVecinal.Models.ViewModels
 
         public Button AddCommunityButton(ComunidadDTO comunidadDTO)
         {
-            Button button = CreateButton(comunidadDTO.Direccion, "#FF0000"); ;
-            button.Clicked += Button_Clicked;
+            Button button = CreateButton(comunidadDTO.Direccion, "#FF0000", comunidadDTO.Id.ToString()); 
+            //button.Clicked += Button_Clicked;
             button.Pressed += Button_Focused;
             button.Released += Button_Unfocused;
 
@@ -30,8 +26,8 @@ namespace GestionVecinal.Models.ViewModels
         }
 
         public Button AddNewCommunityButton()
-            => CreateButton("+ Añadir nueva comunidad", "#4CAF50");
-        public Button CreateButton(string text, string background)
+            => CreateButton("+ Añadir nueva comunidad", "#4CAF50", "");
+        public Button CreateButton(string text, string background, string id)
         {
             return new()
             {
@@ -44,16 +40,12 @@ namespace GestionVecinal.Models.ViewModels
                 Margin = new Thickness(10),
                 FontSize = 14,
                 LineBreakMode = LineBreakMode.WordWrap,
-                FontAttributes = FontAttributes.Bold
+                FontAttributes = FontAttributes.Bold,
+                ClassId = id
             };
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            // Manejar el evento Click del botón
-            Button button = (Button)sender;
-            Console.WriteLine($"Se ha hecho clic en el botón: {button.Text}");
-        }
+        
 
         private void Button_Focused(object sender, EventArgs e)
         {

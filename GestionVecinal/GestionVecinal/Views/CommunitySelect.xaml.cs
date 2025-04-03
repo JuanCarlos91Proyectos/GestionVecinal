@@ -24,7 +24,9 @@ public partial class CommunitySelect : ContentPage
         _viewModel.Comunidades = await this.GetComunidades();
         foreach (var comunidad in _viewModel.Comunidades)
         {
-            this.ComunidadesPicker.Children.Add(_viewModel.AddCommunityButton(comunidad));
+            Button comunidadButton = _viewModel.AddCommunityButton(comunidad);
+            comunidadButton.Clicked += HandleViewComunidad;
+            this.ComunidadesPicker.Children.Add(comunidadButton);
         }
         Button newCommunityButton = _viewModel.AddNewCommunityButton();
         newCommunityButton.Clicked += HandleAddNewCommunity;
@@ -33,6 +35,14 @@ public partial class CommunitySelect : ContentPage
 
     private async Task<List<ComunidadDTO>> GetComunidades()
         => await this._comunidadesService.GetComunidades();
+
+    private async void HandleViewComunidad(object sender, EventArgs e)
+    {
+        var comunidadId = ((Button)sender).ClassId;
+        var page = _serviceProvider.GetService<ViewComunidad>();
+        page._viewModel.Comunidad = _viewModel.Comunidades.First(x => x.Id.ToString().Equals(comunidadId));
+        await Navigation.PushAsync(page);
+    }
 
     private void HandleAddNewCommunity(object sender, EventArgs e)
     {
@@ -51,8 +61,8 @@ public partial class CommunitySelect : ContentPage
         OnStart().ConfigureAwait(false);
     }
 
-    private void ContentPage_Disappearing(object sender, EventArgs e)
-    {
-        Application.Current.Quit();
-    }
+    //private void ContentPage_Disappearing(object sender, EventArgs e)
+    //{
+    //    Application.Current.Quit();
+    //}
 }

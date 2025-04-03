@@ -14,11 +14,7 @@ namespace GestionVecinal.Models.ViewModels
         public ComunidadDTO Comunidad
         {
             get { return _comunidad; }
-            set
-            {
-                _comunidad = value;
-                OnPropertyChanged(nameof(Comunidad));
-            }
+            set { _comunidad = value; OnPropertyChanged(nameof(Comunidad)); }
         }
         public AddComunidadViewModel(AppSettings appSettings) : base(appSettings)
         {
