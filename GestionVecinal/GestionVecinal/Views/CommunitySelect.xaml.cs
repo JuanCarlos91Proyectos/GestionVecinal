@@ -34,7 +34,7 @@ public partial class CommunitySelect : ContentPage
     }
 
     private async Task<List<ComunidadDTO>> GetComunidades()
-        => await this._comunidadesService.GetComunidades();
+        => await this._comunidadesService.GetAsync();
 
     private async void HandleViewComunidad(object sender, EventArgs e)
     {

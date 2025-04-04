@@ -45,6 +45,15 @@ namespace GestionVecinal
         private static MauiAppBuilder RegisterRepositories(this MauiAppBuilder builder)
         {
             builder.Services.AddTransient<IComunidadesRepository, ComunidadesRepository>();
+            builder.Services.AddTransient<IDerramasRepository, DerramasRepository>();
+            builder.Services.AddTransient<IPagosRepository, PagosRepository>();
+            builder.Services.AddTransient<IProveedoresRepository, ProveedoresRepository>();
+            builder.Services.AddTransient<IFacturasRepository, FacturasRepository>();
+            builder.Services.AddTransient<IIncidenciasRepository, IncidenciasRepository>();
+            builder.Services.AddTransient<IJuntasRepository, JuntasRepository>();
+            builder.Services.AddTransient<IMiembrosRepository, MiembrosRepository>();
+            builder.Services.AddTransient<IPresidenciasRepository, PresidenciasRepository>();
+            builder.Services.AddTransient<IProveedoresRepository, ProveedoresRepository>();
             return builder;
         }
 

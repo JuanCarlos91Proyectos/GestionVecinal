@@ -10,7 +10,7 @@ namespace GestionVecinal.Services.Interfaces
 {
     public interface IComunidadesService
     {
-        Task<List<ComunidadDTO>> GetComunidades();
+        Task<List<ComunidadDTO>> GetAsync();
         Task<Response<bool>> AddAsync(ComunidadDTO comunidad);
         Task<Response<List<DerramaDTO>>> GetDerramasAsync(int comunidadId);
         Task<Response<List<FacturaDTO>>> GetFacturasAsync(int comunidadId);

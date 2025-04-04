@@ -15,16 +15,41 @@ namespace GestionVecinal.Services
     public class ComunidadesService : IComunidadesService
     {
         private readonly IComunidadesRepository _repository;
+        private readonly IDerramasRepository _derramaRepository;
+        private readonly IPagosRepository _pagosRepository;
+        private readonly IProveedoresRepository _proveedoresRepository;
+        private readonly IFacturasRepository _facturasRepository;
+        private readonly IIncidenciasRepository _incidenciasRepository;
+        private readonly IJuntasRepository _juntasRepository;
+        private readonly IMiembrosRepository _miembrosRepository;
+        private readonly IPresidenciasRepository _presidenciasRepository;
         private readonly IMapper _mapper;
-        public ComunidadesService(IComunidadesRepository repository, IMapper mapper)
+        public ComunidadesService(IComunidadesRepository repository,
+            IDerramasRepository derramaRepository,
+            IPagosRepository pagosRepository,
+            IProveedoresRepository proveedoresRepository,
+            IFacturasRepository facturasRepository,
+            IIncidenciasRepository incidenciasRepository,
+            IJuntasRepository juntasRepository,
+            IMiembrosRepository miembrosRepository,
+            IPresidenciasRepository presidenciasRepository,
+            IMapper mapper)
         {
             _repository = repository;
+            _derramaRepository = derramaRepository;
+            _pagosRepository = pagosRepository;
+            _proveedoresRepository = proveedoresRepository;
+            _facturasRepository = facturasRepository;
+            _incidenciasRepository = incidenciasRepository;
+            _juntasRepository = juntasRepository;
+            _miembrosRepository = miembrosRepository;
+            _presidenciasRepository = presidenciasRepository;
             _mapper = mapper;
         }
 
-        public async Task<List<ComunidadDTO>> GetComunidades()
+        public async Task<List<ComunidadDTO>> GetAsync()
         {
-            var result = await _repository.GetComunidades();
+            var result = await _repository.GetAsync();
             return _mapper.Map<List<ComunidadDTO>>(result);
         }
 
@@ -53,7 +78,7 @@ namespace GestionVecinal.Services
             var response = new Response<List<DerramaDTO>>();
             try
             {
-                var result = await _repository.GetDerramasAsync(comunidadId);
+                var result = await _derramaRepository.GetAsync(comunidadId);
                 if (result != null)
                 {
                     var mappedResult = _mapper.Map<List<DerramaDTO>>(result);
@@ -77,7 +102,7 @@ namespace GestionVecinal.Services
             var response = new Response<List<FacturaDTO>>();
             try
             {
-                var result = await _repository.GetFacturasAsync(comunidadId);
+                var result = await _facturasRepository.GetAsync(comunidadId);
                 if (result != null)
                 {
                     var mappedResult = _mapper.Map<List<FacturaDTO>>(result);
@@ -101,7 +126,7 @@ namespace GestionVecinal.Services
             var response = new Response<List<IncidenciaDTO>>();
             try
             {
-                var result = await _repository.GetIncidenciasAsync(comunidadId);
+                var result = await _incidenciasRepository.GetAsync(comunidadId);
                 if (result != null)
                 {
                     var mappedResult = _mapper.Map<List<IncidenciaDTO>>(result);
@@ -125,7 +150,7 @@ namespace GestionVecinal.Services
             var response = new Response<List<JuntaDTO>>();
             try
             {
-                var result = await _repository.GetJuntasAsync(comunidadId);
+                var result = await _juntasRepository.GetAsync(comunidadId);
                 if (result != null)
                 {
                     var mappedResult = _mapper.Map<List<JuntaDTO>>(result);
@@ -149,7 +174,7 @@ namespace GestionVecinal.Services
             var response = new Response<List<MiembroDTO>>();
             try
             {
-                var result = await _repository.GetMiembrosAsync(comunidadId);
+                var result = await _miembrosRepository.GetAsync(comunidadId);
                 if (result != null)
                 {
                     var mappedResult = _mapper.Map<List<MiembroDTO>>(result);
@@ -173,7 +198,7 @@ namespace GestionVecinal.Services
             var response = new Response<List<PresidenciaDTO>>();
             try
             {
-                var result = await _repository.GetPresidentesAsync(comunidadId);
+                var result = await _presidenciasRepository.GetAsync(comunidadId);
                 if (result != null)
                 {
                     var mappedResult = _mapper.Map<List<PresidenciaDTO>>(result);
@@ -197,7 +222,7 @@ namespace GestionVecinal.Services
             var response = new Response<List<ProveedorDTO>>();
             try
             {
-                var result = await _repository.GetProveedoresAsync(comunidadId);
+                var result = await _proveedoresRepository.GetAsync(comunidadId);
                 if (result != null)
                 {
                     var mappedResult = _mapper.Map<List<ProveedorDTO>>(result);

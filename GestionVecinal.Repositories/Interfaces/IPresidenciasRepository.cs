@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace GestionVecinal.Repositories
 {
-    public interface IComunidadesRepository : IBaseRepository
+    public interface IPresidenciasRepository : IBaseRepository
     {
-        Task<List<Comunidad>> GetAsync();
-
-        Task<bool> AddAsync(Comunidad comunidad);
+        Task<List<Presidencia>> GetAsync(int comunidadId);
     }
 }
