@@ -7,10 +7,33 @@ public partial class ViewComunidad : TabbedPage
 {
 	public ViewComunidadViewModel _viewModel;
     private readonly IComunidadesService _comunidadesService;
-    public ViewComunidad(ViewComunidadViewModel viewModel, IComunidadesService comunidadesService)
-	{
-		_viewModel = viewModel;
+    private readonly IDerramasService _derramasService;
+    private readonly IIncidenciasService _incidenciasService;
+    private readonly IJuntasService _juntasService;
+    private readonly IMiembrosService _miembrosService;
+    private readonly IProveedoresService _proveedoresService;
+    private readonly IFacturasService _facturasService;
+    private readonly IPresidenciasService _presidenciasService;
+
+    public ViewComunidad(ViewComunidadViewModel viewModel, 
+        IComunidadesService comunidadesService, 
+        IDerramasService derramasService, 
+        IIncidenciasService incidenciasService, 
+        IJuntasService juntasService, 
+        IMiembrosService miembrosService, 
+        IProveedoresService proveedoresService, 
+        IFacturasService facturasService, 
+        IPresidenciasService presidenciasService)
+    {
+        _viewModel = viewModel;
         _comunidadesService = comunidadesService;
+        _derramasService = derramasService;
+        _incidenciasService = incidenciasService;
+        _juntasService = juntasService;
+        _miembrosService = miembrosService;
+        _proveedoresService = proveedoresService;
+        _facturasService = facturasService;
+        _presidenciasService = presidenciasService;
         GetDatosComunidad().ConfigureAwait(false);
         InitializeComponent();
         BindingContext = _viewModel;
@@ -18,18 +41,18 @@ public partial class ViewComunidad : TabbedPage
 
     private async Task GetDatosComunidad()
     {
-        _viewModel.Derramas = (await _comunidadesService.GetDerramasAsync(_viewModel.Comunidad.Id)).Value;
-        _viewModel.Facturas = (await _comunidadesService.GetFacturasAsync(_viewModel.Comunidad.Id)).Value;
-        _viewModel.Incidencias = (await _comunidadesService.GetIncidenciasAsync(_viewModel.Comunidad.Id)).Value;
-        _viewModel.Juntas = (await _comunidadesService.GetJuntasAsync(_viewModel.Comunidad.Id)).Value;
-        _viewModel.Miembros = (await _comunidadesService.GetMiembrosAsync(_viewModel.Comunidad.Id)).Value;
+        _viewModel.Derramas = (await _derramasService.GetAsync(_viewModel.Comunidad.Id)).Value;
+        _viewModel.Facturas = (await _facturasService.GetAsync(_viewModel.Comunidad.Id)).Value;
+        _viewModel.Incidencias = (await _incidenciasService.GetAsync(_viewModel.Comunidad.Id)).Value;
+        _viewModel.Juntas = (await _juntasService.GetAsync(_viewModel.Comunidad.Id)).Value;
+        _viewModel.Miembros = (await _miembrosService.GetAsync(_viewModel.Comunidad.Id)).Value;
         
-        _viewModel.Presidentes = (await _comunidadesService.GetPresidentesAsync(_viewModel.Comunidad.Id)).Value;
+        _viewModel.Presidentes = (await _presidenciasService.GetAsync(_viewModel.Comunidad.Id)).Value;
         foreach (var miembro in _viewModel.Miembros)
         {
             if (_viewModel.Presidentes.Any(x => x.MiembroId == miembro.Id && x.FechaInicio <= DateTime.Now && x.FechaFin >= DateTime.Now))
                 miembro.EsPresidente = true;
         }
-        _viewModel.Proveedores = (await _comunidadesService.GetProveedoresAsync(_viewModel.Comunidad.Id)).Value;
+        _viewModel.Proveedores = (await _proveedoresService.GetAsync(_viewModel.Comunidad.Id)).Value;
     }
 }

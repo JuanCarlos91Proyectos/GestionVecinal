@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace GestionVecinal.Services.Interfaces
 {
-    public interface IComunidadesService
+    public interface IJuntasService
     {
-        Task<List<ComunidadDTO>> GetAsync();
-        Task<Response<bool>> AddAsync(ComunidadDTO comunidad);
+        Task<Response<List<JuntaDTO>>> GetAsync(int comunidadId);
     }
 }

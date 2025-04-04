@@ -39,6 +39,14 @@ namespace GestionVecinal
         {
             builder.Services.AddTransient<IComunidadesService, ComunidadesService>();
             builder.Services.AddTransient<ILoginService, LoginService>();
+            builder.Services.AddTransient<IDerramasService, DerramasService>();
+            builder.Services.AddTransient<IPagosService, PagosService>();
+            builder.Services.AddTransient<IProveedoresService, ProveedoresService>();
+            builder.Services.AddTransient<IFacturasService, FacturasService>();
+            builder.Services.AddTransient<IIncidenciasService, IncidenciasService>();
+            builder.Services.AddTransient<IJuntasService, JuntasService>();
+            builder.Services.AddTransient<IMiembrosService, MiembrosService>();
+            builder.Services.AddTransient<IPresidenciasService, PresidenciasService>();
             return builder;
         }
 

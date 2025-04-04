@@ -7,7 +7,7 @@
 		<RootNamespace>GestionVecinal</RootNamespace>
 		<UseMaui>true</UseMaui>
 		<Nullable>enable</Nullable>
-		<AssemblyVersion>1.0.221.0404</AssemblyVersion>
+		<AssemblyVersion>1.0.224.0404</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
