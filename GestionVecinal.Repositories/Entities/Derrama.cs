@@ -8,6 +8,9 @@ namespace GestionVecinal.Repositories.Entities
         public int Id { get; set; }
 
         [NotNull]
+        public int ComunidadId { get; set; }
+        public Comunidad? Comunidad { get; set; }
+        [NotNull]
         public string Descripcion { get; set; } = string.Empty;
 
         [NotNull]

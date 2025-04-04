@@ -9,7 +9,10 @@ namespace GestionVecinal.Repositories.Entities
 
         [NotNull]
         public int ProveedorId { get; set; } // Foreign key a Miembros
-        private Proveedor? Proveedor { get; set; }
+        public Proveedor? Proveedor { get; set; }
+
+        public int ComunidadId { get; set; } // Foreign key a Comunidades
+        public Comunidad? Comunidad { get; set; }
 
         [NotNull]
         public double Monto { get; set; } = 0;

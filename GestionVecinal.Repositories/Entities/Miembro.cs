@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 namespace GestionVecinal.Repositories.Entities
 {
@@ -8,7 +9,6 @@ namespace GestionVecinal.Repositories.Entities
         public int Id { get; set; }
         [NotNull]
         public int ComunidadId { get; set; }
-        private Comunidad? Comunidad { get; set; }
         [NotNull]
         public string Nombre { get; set; } = string.Empty;
         [NotNull]
@@ -23,5 +23,7 @@ namespace GestionVecinal.Repositories.Entities
         public int FormaPagoCuota { get; set; }
         [NotNull]
         public bool Moroso { get; set; } = false;
+
+        public Comunidad? Comunidad { get; set; }
     }
 }

@@ -8,7 +8,7 @@ namespace GestionVecinal.Repositories.Entities
         public int Id { get; set; }
         [NotNull]
         public int ComunidadId { get; set; }
-        private Comunidad? Comunidad { get; set; }
+        public Comunidad? Comunidad { get; set; }
 
         [NotNull]
         public DateTime Fecha { get; set; }

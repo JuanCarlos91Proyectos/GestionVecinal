@@ -69,6 +69,13 @@ namespace GestionVecinal
         private static MauiAppBuilder RegisterAutoMapper(this MauiAppBuilder builder)
         {
             builder.Services.AddAutoMapper(typeof(ComunidadMappingProfile));
+            builder.Services.AddAutoMapper(typeof(ProveedorMappingProfile));
+            builder.Services.AddAutoMapper(typeof(FacturaMappingProfile));
+            builder.Services.AddAutoMapper(typeof(IncidenciaMappingProfile));
+            builder.Services.AddAutoMapper(typeof(JuntaMappingProfile));
+            builder.Services.AddAutoMapper(typeof(MiembroMappingProfile));
+            builder.Services.AddAutoMapper(typeof(PresidenciaMappingProfile));
+            builder.Services.AddAutoMapper(typeof(ProveedorMappingProfile));
             return builder;
         }
         private static MauiAppBuilder AddAppSettings(this MauiAppBuilder builder)

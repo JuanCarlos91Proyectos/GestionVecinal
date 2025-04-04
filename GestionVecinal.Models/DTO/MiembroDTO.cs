@@ -15,5 +15,6 @@ namespace GestionVecinal.Models.DTO
         public string Email { get; set; } = string.Empty;
         public FormaPagoCuotaEnum FormaPagoCuota { get; set; } = FormaPagoCuotaEnum.Domiciliacion;
         public bool Moroso { get; set; } = false;
+        public bool EsPresidente { get; set;} = false;
     }
 }

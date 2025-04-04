@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 namespace GestionVecinal.Repositories.Entities
 {
@@ -15,5 +16,9 @@ namespace GestionVecinal.Repositories.Entities
         public int NumeroViviendas { get; set; }
         [NotNull]
         public decimal Cuota { get; set; } = 0;
+
+        
+        [OneToMany]
+        public List<Miembro> Miembros { get; set; } = new List<Miembro>();
     }
 }

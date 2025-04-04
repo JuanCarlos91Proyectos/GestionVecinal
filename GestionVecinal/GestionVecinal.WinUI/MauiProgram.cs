@@ -1,5 +1,4 @@
-﻿using CommunityToolkit.Maui;
-using GestionVecinal.Models;
+﻿using GestionVecinal.Models;
 using GestionVecinal.Models.ViewModels;
 using GestionVecinal.Repositories;
 using GestionVecinal.Services;

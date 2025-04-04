@@ -47,5 +47,173 @@ namespace GestionVecinal.Services
 
             return response;
         }
+
+        public async Task<Response<List<DerramaDTO>>> GetDerramasAsync(int comunidadId)
+        {
+            var response = new Response<List<DerramaDTO>>();
+            try
+            {
+                var result = await _repository.GetDerramasAsync(comunidadId);
+                if (result != null)
+                {
+                    var mappedResult = _mapper.Map<List<DerramaDTO>>(result);
+                    response.setValue(mappedResult, true, string.Empty);
+                }
+                    
+                else
+                    response.setError("Error al obtener las derramas", string.Empty);
+            }
+            catch (Exception ex)
+            {
+                response.setError(ex.Message, ex.StackTrace);
+                throw new NotImplementedException();
+            }
+
+            return response;
+        }
+
+        public async Task<Response<List<FacturaDTO>>> GetFacturasAsync(int comunidadId)
+        {
+            var response = new Response<List<FacturaDTO>>();
+            try
+            {
+                var result = await _repository.GetFacturasAsync(comunidadId);
+                if (result != null)
+                {
+                    var mappedResult = _mapper.Map<List<FacturaDTO>>(result);
+                    response.setValue(mappedResult, true, string.Empty);
+                }
+
+                else
+                    response.setError("Error al obtener las facturas", string.Empty);
+            }
+            catch (Exception ex)
+            {
+                response.setError(ex.Message, ex.StackTrace);
+                throw new NotImplementedException();
+            }
+
+            return response;
+        }
+
+        public async Task<Response<List<IncidenciaDTO>>> GetIncidenciasAsync(int comunidadId)
+        {
+            var response = new Response<List<IncidenciaDTO>>();
+            try
+            {
+                var result = await _repository.GetIncidenciasAsync(comunidadId);
+                if (result != null)
+                {
+                    var mappedResult = _mapper.Map<List<IncidenciaDTO>>(result);
+                    response.setValue(mappedResult, true, string.Empty);
+                }
+
+                else
+                    response.setError("Error al obtener las incidencias", string.Empty);
+            }
+            catch (Exception ex)
+            {
+                response.setError(ex.Message, ex.StackTrace);
+                throw new NotImplementedException();
+            }
+
+            return response;
+        }
+
+        public async Task<Response<List<JuntaDTO>>> GetJuntasAsync(int comunidadId)
+        {
+            var response = new Response<List<JuntaDTO>>();
+            try
+            {
+                var result = await _repository.GetJuntasAsync(comunidadId);
+                if (result != null)
+                {
+                    var mappedResult = _mapper.Map<List<JuntaDTO>>(result);
+                    response.setValue(mappedResult, true, string.Empty);
+                }
+
+                else
+                    response.setError("Error al obtener las juntas", string.Empty);
+            }
+            catch (Exception ex)
+            {
+                response.setError(ex.Message, ex.StackTrace);
+                throw new NotImplementedException();
+            }
+
+            return response;
+        }
+
+        public async Task<Response<List<MiembroDTO>>> GetMiembrosAsync(int comunidadId)
+        {
+            var response = new Response<List<MiembroDTO>>();
+            try
+            {
+                var result = await _repository.GetMiembrosAsync(comunidadId);
+                if (result != null)
+                {
+                    var mappedResult = _mapper.Map<List<MiembroDTO>>(result);
+                    response.setValue(mappedResult, true, string.Empty);
+                }
+
+                else
+                    response.setError("Error al obtener los miembros", string.Empty);
+            }
+            catch (Exception ex)
+            {
+                response.setError(ex.Message, ex.StackTrace);
+                throw new NotImplementedException();
+            }
+
+            return response;
+        }
+
+        public async Task<Response<List<PresidenciaDTO>>> GetPresidentesAsync(int comunidadId)
+        {
+            var response = new Response<List<PresidenciaDTO>>();
+            try
+            {
+                var result = await _repository.GetPresidentesAsync(comunidadId);
+                if (result != null)
+                {
+                    var mappedResult = _mapper.Map<List<PresidenciaDTO>>(result);
+                    response.setValue(mappedResult, true, string.Empty);
+                }
+
+                else
+                    response.setError("Error al obtener el historial de presidentes", string.Empty);
+            }
+            catch (Exception ex)
+            {
+                response.setError(ex.Message, ex.StackTrace);
+                throw new NotImplementedException();
+            }
+
+            return response;
+        }
+
+        public async Task<Response<List<ProveedorDTO>>> GetProveedoresAsync(int comunidadId)
+        {
+            var response = new Response<List<ProveedorDTO>>();
+            try
+            {
+                var result = await _repository.GetProveedoresAsync(comunidadId);
+                if (result != null)
+                {
+                    var mappedResult = _mapper.Map<List<ProveedorDTO>>(result);
+                    response.setValue(mappedResult, true, string.Empty);
+                }
+
+                else
+                    response.setError("Error al obtener los proveedores", string.Empty);
+            }
+            catch (Exception ex)
+            {
+                response.setError(ex.Message, ex.StackTrace);
+                throw new NotImplementedException();
+            }
+
+            return response;
+        }
     }
 }

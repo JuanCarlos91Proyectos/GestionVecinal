@@ -45,7 +45,7 @@
         <ContentPage Title="{Binding AppSettings.Labels.ViewComunidadLabels.Miembros}">
             <StackLayout>
                 <Label Text="Gestión de Facturas" />
-                <!-- Aquí puedes agregar controles para gestionar la entidad Factura -->
+                <Label Text="{Binding Miembros[0].Nombre}"/>
             </StackLayout>
         </ContentPage>
 
