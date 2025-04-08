@@ -17,7 +17,7 @@ namespace GestionVecinal.Models.ViewModels
 
         public Button AddCommunityButton(ComunidadDTO comunidadDTO)
         {
-            Button button = CreateButton(comunidadDTO.Direccion, "#FF0000", comunidadDTO.Id.ToString()); 
+            Button button = CreateButton(comunidadDTO.Direccion, "#FF0000", (Microsoft.Maui.Graphics.Color)Application.Current.Resources["White"], comunidadDTO.Id.ToString()); 
             //button.Clicked += Button_Clicked;
             button.Pressed += Button_Focused;
             button.Released += Button_Unfocused;
@@ -26,13 +26,13 @@ namespace GestionVecinal.Models.ViewModels
         }
 
         public Button AddNewCommunityButton()
-            => CreateButton("+ Añadir nueva comunidad", "#4CAF50", "");
-        public Button CreateButton(string text, string background, string id)
+            => CreateButton("+ Añadir nueva comunidad", "#4CAF50", (Microsoft.Maui.Graphics.Color)Application.Current.Resources["PrimaryPlus"], "");
+        public Button CreateButton(string text, string background, Microsoft.Maui.Graphics.Color color, string id)
         {
             return new()
             {
                 Text = text,
-                TextColor = Microsoft.Maui.Graphics.Color.FromArgb("#AAAAAA"),
+                TextColor = color,
                 BackgroundColor = Microsoft.Maui.Graphics.Color.FromArgb(background),
                 Padding = new Thickness(10, 20),
                 WidthRequest = 120,

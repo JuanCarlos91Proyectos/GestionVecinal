@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using GestionVecinal.Models.DTO;
+using GestionVecinal.Models.Enums;
 using GestionVecinal.Repositories.Entities;
 using System;
 using System.Collections.Generic;
@@ -13,8 +14,10 @@ namespace GestionVecinal.Services.Mappers
     {
         public MiembroMappingProfile()
         {
-            CreateMap<Miembro, MiembroDTO>();
-            CreateMap<MiembroDTO, Miembro>();
+            CreateMap<Miembro, MiembroDTO>()
+                .ForMember(x => x.FormaPagoCuota, opt => opt.MapFrom(origin => (FormaPagoCuotaEnum)origin.FormaPagoCuota));
+            CreateMap<MiembroDTO, Miembro>()
+                .ForMember(x => x.FormaPagoCuota, opt => opt.MapFrom(origin => (int)origin.FormaPagoCuota)); ;
         }
     }
 }

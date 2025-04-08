@@ -13,8 +13,12 @@ namespace GestionVecinal.Services.Mappers
     {
         public PresidenciaMappingProfile()
         {
-            CreateMap<Presidencia, PresidenciaDTO>();
-            CreateMap<PresidenciaDTO, Presidencia>();
+            CreateMap<Presidencia, PresidenciaDTO>()
+                .ForMember(x => x.FechaFin, opt => opt.MapFrom(origin => DateTime.Parse(origin.FechaFin)))
+                .ForMember(x => x.FechaInicio, opt => opt.MapFrom(origin => DateTime.Parse(origin.FechaInicio)));
+            CreateMap<PresidenciaDTO, Presidencia>()
+                .ForMember(x => x.FechaFin, opt => opt.MapFrom(origin => DateOnly.FromDateTime(origin.FechaFin).ToString()))
+                .ForMember(x => x.FechaInicio, opt => opt.MapFrom(origin => DateOnly.FromDateTime(origin.FechaInicio).ToString())); ;
         }
     }
 }

@@ -8,6 +8,9 @@ using GestionVecinal.Views;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System.Reflection;
+using MauiIcons.Fluent;
+using MauiIcons.Material;
+using MauiIcons.Cupertino;
 
 namespace GestionVecinal
 {
@@ -17,6 +20,12 @@ namespace GestionVecinal
         {
             builder
                 .UseMauiApp<App>()
+                // Initialises the .Net Maui Icons - Fluent
+                .UseFluentMauiIcons()
+                // Initialises the .Net Maui Icons - Material
+                .UseMaterialMauiIcons()
+                // Initialises the .Net Maui Icons - Cupertino
+                .UseCupertinoMauiIcons()
                 .RegisterAutoMapper()
                 .RegisterServices()
                 .RegisterRepositories()

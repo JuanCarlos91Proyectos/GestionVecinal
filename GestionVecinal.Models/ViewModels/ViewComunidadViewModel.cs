@@ -1,6 +1,7 @@
 ﻿using GestionVecinal.Models.DTO;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace GestionVecinal.Models.ViewModels
 
         private List<IncidenciaDTO> _incidencias = new List<IncidenciaDTO>();
         private List<JuntaDTO> _juntas = new List<JuntaDTO>();
-        private List<MiembroDTO> _miembros = new List<MiembroDTO>();
+        private ObservableCollection<MiembroDTO> _miembros = new ObservableCollection<MiembroDTO>();
         private List<PresidenciaDTO> _presidentes = new List<PresidenciaDTO>();
         private List<ProveedorDTO> _proveedores = new List<ProveedorDTO>();
 
@@ -47,7 +48,7 @@ namespace GestionVecinal.Models.ViewModels
             get { return _juntas; }
             set { _juntas = value; OnPropertyChanged(nameof(Juntas)); }
         }
-        public List<MiembroDTO> Miembros
+        public ObservableCollection<MiembroDTO> Miembros
         {
             get { return _miembros; }
             set { _miembros = value; OnPropertyChanged(nameof(Miembros)); }

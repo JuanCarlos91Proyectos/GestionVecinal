@@ -1,5 +1,8 @@
+using GestionVecinal.Models.DTO;
 using GestionVecinal.Models.ViewModels;
 using GestionVecinal.Services.Interfaces;
+using MauiIcons.Core;
+using System.Collections.ObjectModel;
 
 namespace GestionVecinal.Views;
 
@@ -37,6 +40,7 @@ public partial class ViewComunidad : TabbedPage
         GetDatosComunidad().ConfigureAwait(false);
         InitializeComponent();
         BindingContext = _viewModel;
+        _ = new MauiIcon();
     }
 
     private async Task GetDatosComunidad()
@@ -45,7 +49,8 @@ public partial class ViewComunidad : TabbedPage
         _viewModel.Facturas = (await _facturasService.GetAsync(_viewModel.Comunidad.Id)).Value;
         _viewModel.Incidencias = (await _incidenciasService.GetAsync(_viewModel.Comunidad.Id)).Value;
         _viewModel.Juntas = (await _juntasService.GetAsync(_viewModel.Comunidad.Id)).Value;
-        _viewModel.Miembros = (await _miembrosService.GetAsync(_viewModel.Comunidad.Id)).Value;
+        var miembros = (await _miembrosService.GetAsync(_viewModel.Comunidad.Id)).Value;
+        _viewModel.Miembros = new ObservableCollection<MiembroDTO>(miembros);
         
         _viewModel.Presidentes = (await _presidenciasService.GetAsync(_viewModel.Comunidad.Id)).Value;
         foreach (var miembro in _viewModel.Miembros)
@@ -54,5 +59,13 @@ public partial class ViewComunidad : TabbedPage
                 miembro.EsPresidente = true;
         }
         _viewModel.Proveedores = (await _proveedoresService.GetAsync(_viewModel.Comunidad.Id)).Value;
+    }
+
+    private void SetMiembrosList()
+    {
+        foreach(var miembro in _viewModel.Miembros)
+        {
+
+        }
     }
 }

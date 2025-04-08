@@ -14,9 +14,9 @@ namespace GestionVecinal.Services
 {
     public class PresidenciasService : IPresidenciasService
     {
-        private readonly IProveedoresRepository _repository;
+        private readonly IPresidenciasRepository _repository;
         private readonly IMapper _mapper;
-        public PresidenciasService(IProveedoresRepository repository,
+        public PresidenciasService(IPresidenciasRepository repository,
             IMapper mapper)
         {
             _repository = repository;
@@ -43,7 +43,7 @@ namespace GestionVecinal.Services
             catch (Exception ex)
             {
                 response.setError(ex.Message, ex.StackTrace);
-                throw new NotImplementedException();
+                throw ex;
             }
 
             return response;

@@ -41,7 +41,7 @@ namespace GestionVecinal.Services
             catch (Exception ex)
             {
                 response.setError(ex.Message, ex.StackTrace);
-                throw new NotImplementedException();
+                throw ex;
             }
 
             return response;

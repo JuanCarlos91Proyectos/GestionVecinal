@@ -1,4 +1,8 @@
 ﻿using GestionVecinal.Models.Enums;
+using GestionVecinal.Models.Extensions;
+using System;
+using System.Reflection;
+using System.ComponentModel;
 
 namespace GestionVecinal.Models.DTO
 {
@@ -14,6 +18,13 @@ namespace GestionVecinal.Models.DTO
         public string Telefono { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
         public FormaPagoCuotaEnum FormaPagoCuota { get; set; } = FormaPagoCuotaEnum.Domiciliacion;
+        public string FormaPago
+        {
+            get
+            {
+                return FormaPagoCuota.GetDescription();
+            }
+        }
         public bool Moroso { get; set; } = false;
         public bool EsPresidente { get; set;} = false;
     }

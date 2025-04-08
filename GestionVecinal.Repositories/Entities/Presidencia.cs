@@ -14,8 +14,8 @@ namespace GestionVecinal.Repositories.Entities
         public int MiembroId { get; set; }
         private Miembro? Miembro { get; set; }
         [NotNull]
-        public DateTime FechaInicio { get; set; }
+        public string FechaInicio { get; set; }
         [NotNull]
-        public DateTime FechaFin { get; set; }
+        public string FechaFin { get; set; }
     }
 }
