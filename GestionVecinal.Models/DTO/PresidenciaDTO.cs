@@ -7,8 +7,8 @@
         public int ComunidadId { get; set; }
         private ComunidadDTO? Comunidad { get; set; }
         public int MiembroId { get; set; }
-        private MiembroDTO? Miembro { get; set; }
-        public DateTime FechaInicio { get; set; }
-        public DateTime FechaFin { get; set; }
+        public MiembroDTO? Miembro { get; set; }
+        public DateOnly FechaInicio { get; set; }
+        public DateOnly FechaFin { get; set; }
     }
 }

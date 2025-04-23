@@ -12,7 +12,7 @@ namespace GestionVecinal.Repositories.Entities
         public Comunidad? Comunidad { get; set; }
         [NotNull]
         public int MiembroId { get; set; }
-        private Miembro? Miembro { get; set; }
+        public Miembro? Miembro { get; set; }
         [NotNull]
         public string FechaInicio { get; set; }
         [NotNull]

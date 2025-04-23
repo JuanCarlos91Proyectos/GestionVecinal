@@ -55,17 +55,18 @@ public partial class ViewComunidad : TabbedPage
         _viewModel.Presidentes = (await _presidenciasService.GetAsync(_viewModel.Comunidad.Id)).Value;
         foreach (var miembro in _viewModel.Miembros)
         {
-            if (_viewModel.Presidentes.Any(x => x.MiembroId == miembro.Id && x.FechaInicio <= DateTime.Now && x.FechaFin >= DateTime.Now))
+            DateOnly today = DateOnly.FromDateTime(DateTime.Now);
+            if (_viewModel.Presidentes.Any(x => x.MiembroId == miembro.Id && x.FechaInicio <= today && x.FechaFin >= today))
                 miembro.EsPresidente = true;
         }
         _viewModel.Proveedores = (await _proveedoresService.GetAsync(_viewModel.Comunidad.Id)).Value;
     }
 
-    private void SetMiembrosList()
+    private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
-        foreach(var miembro in _viewModel.Miembros)
-        {
-
-        }
+        var icon = (MauiIcon)sender;
+        var memberId = icon.ClassId;
+        // Aquí puedes agregar la lógica para manejar el evento de clic, por ejemplo, navegar a una página de edición
+        Console.WriteLine($"Icono de edición clicado para el miembro con ID: {memberId}");
     }
 }

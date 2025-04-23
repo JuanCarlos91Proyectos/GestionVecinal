@@ -27,12 +27,12 @@ namespace GestionVecinal.Models.ViewModels
 
         public Button AddNewCommunityButton()
             => CreateButton("+ Añadir nueva comunidad", "#4CAF50", (Microsoft.Maui.Graphics.Color)Application.Current.Resources["PrimaryPlus"], "");
-        public Button CreateButton(string text, string background, Microsoft.Maui.Graphics.Color color, string id)
+        public Button CreateButton(string text, string background, Microsoft.Maui.Graphics.Color textColor, string id)
         {
             return new()
             {
                 Text = text,
-                TextColor = color,
+                TextColor = textColor,
                 BackgroundColor = Microsoft.Maui.Graphics.Color.FromArgb(background),
                 Padding = new Thickness(10, 20),
                 WidthRequest = 120,

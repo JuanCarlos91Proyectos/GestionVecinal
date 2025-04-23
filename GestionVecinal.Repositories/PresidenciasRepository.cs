@@ -20,6 +20,7 @@ namespace GestionVecinal.Repositories
             foreach (var presidente in presidentes)
             {
                 presidente.Comunidad = await _database.Table<Comunidad>().Where(x => x.Id == comunidadId).FirstOrDefaultAsync();
+                presidente.Miembro = await _database.Table<Miembro>().Where(x => x.Id == presidente.MiembroId).FirstOrDefaultAsync();
             }
             return presidentes;
         }

@@ -14,11 +14,11 @@ namespace GestionVecinal.Services.Mappers
         public PresidenciaMappingProfile()
         {
             CreateMap<Presidencia, PresidenciaDTO>()
-                .ForMember(x => x.FechaFin, opt => opt.MapFrom(origin => DateTime.Parse(origin.FechaFin)))
-                .ForMember(x => x.FechaInicio, opt => opt.MapFrom(origin => DateTime.Parse(origin.FechaInicio)));
+                .ForMember(x => x.FechaFin, opt => opt.MapFrom(origin => DateOnly.Parse(origin.FechaFin)))
+                .ForMember(x => x.FechaInicio, opt => opt.MapFrom(origin => DateOnly.Parse(origin.FechaInicio)));
             CreateMap<PresidenciaDTO, Presidencia>()
-                .ForMember(x => x.FechaFin, opt => opt.MapFrom(origin => DateOnly.FromDateTime(origin.FechaFin).ToString()))
-                .ForMember(x => x.FechaInicio, opt => opt.MapFrom(origin => DateOnly.FromDateTime(origin.FechaInicio).ToString())); ;
+                .ForMember(x => x.FechaFin, opt => opt.MapFrom(origin => origin.FechaFin.ToString()))
+                .ForMember(x => x.FechaInicio, opt => opt.MapFrom(origin => origin.FechaInicio.ToString())); ;
         }
     }
 }
