@@ -26,7 +26,7 @@ namespace GestionVecinal.Services
             }
             else
             {
-                response.setError(_appSettings.Errors.Login, string.Empty);
+                response.setError(_appSettings.ErrorLoginMessage, string.Empty);
             }
             return response;
         }

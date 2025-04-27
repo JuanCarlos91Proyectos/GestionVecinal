@@ -11,6 +11,8 @@ using System.Reflection;
 using MauiIcons.Fluent;
 using MauiIcons.Material;
 using MauiIcons.Cupertino;
+using System.Globalization;
+using GestionVecinal.Resources.Localization;
 
 namespace GestionVecinal
 {
@@ -31,6 +33,7 @@ namespace GestionVecinal
                 .RegisterRepositories()
                 .RegisterViewsAndViewModels()
                 .AddAppSettings()
+                .ApplyDefaultLanguage()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -43,6 +46,18 @@ namespace GestionVecinal
 
             return builder;
         }
+
+        private static MauiAppBuilder ApplyDefaultLanguage(this MauiAppBuilder builder)
+        {
+            var cultureESP = new CultureInfo("es-ES");
+            var cultureENG = new CultureInfo("en-US");
+            var systemCulture = CultureInfo.CurrentCulture;
+            CultureInfo.DefaultThreadCurrentCulture = systemCulture.TwoLetterISOLanguageName == "es" ? cultureESP : cultureENG;
+            CultureInfo.DefaultThreadCurrentUICulture = systemCulture.TwoLetterISOLanguageName == "es" ? cultureESP : cultureENG;
+            return builder;
+        }
+
+        
 
         private static MauiAppBuilder RegisterServices(this MauiAppBuilder builder)
         {
@@ -120,8 +135,15 @@ namespace GestionVecinal
             builder.Configuration.AddConfiguration(config);
 
             builder.Configuration.GetSection("AppSettings").Get<AppSettings>();
-            builder.Services.AddSingleton<AppSettings>(config.GetSection("AppSettings").Get<AppSettings>());
+            AppSettings appSettings = ApplyAppSettingsMessages(config.GetSection("AppSettings").Get<AppSettings>() ?? new AppSettings());
+            builder.Services.AddSingleton<AppSettings>(appSettings);
             return builder;
+        }
+
+        private static AppSettings ApplyAppSettingsMessages(AppSettings appSettings)
+        {
+            appSettings.ErrorLoginMessage = AppResources.Errors_Login;
+            return appSettings;
         }
     }
 }

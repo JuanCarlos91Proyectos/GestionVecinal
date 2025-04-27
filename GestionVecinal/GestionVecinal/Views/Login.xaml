@@ -3,32 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GestionVecinal.Views.Login"
              Title="Login - Gestion Vecinal"
-             BackgroundColor="#252525">
+             BackgroundColor="#252525"
+             xmlns:resx="clr-namespace:GestionVecinal.Resources.Localization">
     <StackLayout Padding="50">
         <!-- Título -->
-        <Label Text="{Binding AppSettings.Labels.Welcome}"
+        <Label Text="{x:Static resx:AppResources.Labels_Welcome}"
                Style="{StaticResource title}" />
         <!-- Color oscuro para mejor contraste -->
 
         <!-- Campo de Usuario -->
-        <Label Text="{Binding AppSettings.Labels.Username}"
+        <Label Text="{x:Static resx:AppResources.Labels_Username}"
                Style="{StaticResource label}" />
         <!-- Color gris oscuro -->
         <Entry x:Name="UsernameEntry"
-               Placeholder="{Binding AppSettings.Placeholders.Username}"
+               Placeholder="{x:Static resx:AppResources.PlaceHolders_Username}"
                Style="{StaticResource entry}" />
         <!-- Color gris para el placeholder -->
 
         <!-- Campo de Contraseña -->
-        <Label Text="{Binding AppSettings.Labels.Password}"
+        <Label Text="{x:Static resx:AppResources.Labels_Password}"
                Style="{StaticResource label}" />
         <Entry x:Name="PasswordEntry"
-               Placeholder="{Binding AppSettings.Placeholders.Password}"
+               Placeholder="{x:Static resx:AppResources.PlaceHolders_Password}"
                IsPassword="True"
                Style="{StaticResource entry}" />
 
         <!-- Botón de Iniciar Sesión -->
-        <Button Text="{Binding AppSettings.Labels.Login}"
+        <Button Text="{x:Static resx:AppResources.Labels_Login}"
                 Clicked="OnLoginClicked"
                 Style="{StaticResource button}" />
 

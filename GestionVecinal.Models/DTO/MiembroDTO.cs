@@ -17,6 +17,7 @@ namespace GestionVecinal.Models.DTO
         public string Puerta { get; set; } = string.Empty;
         public string Telefono { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
+        public decimal? Coeficiente { get; set; }
         public FormaPagoCuotaEnum FormaPagoCuota { get; set; } = FormaPagoCuotaEnum.Domiciliacion;
         public string FormaPago
         {

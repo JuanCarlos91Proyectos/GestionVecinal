@@ -23,6 +23,7 @@ namespace GestionVecinal.Repositories.Entities
         public int FormaPagoCuota { get; set; }
         [NotNull]
         public bool Moroso { get; set; } = false;
+        public decimal? Coeficiente { get; set; }
 
         public Comunidad? Comunidad { get; set; }
     }

@@ -3,11 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GestionVecinal.Views.CommunitySelect"
              Title="Listado de comunidades"
-             BackgroundColor="#252525">
+             BackgroundColor="#252525"
+             xmlns:resx="clr-namespace:GestionVecinal.Resources.Localization">
     <StackLayout Padding="10, 20">
         <StackLayout x:Name="ComunidadesPicker"  Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Start"/>
         <Label x:Name="BusyMessage" 
-               Text="{Binding AppSettings.Labels.OpenedNewCommunityWindow}" 
+               Text="{x:Static resx:AppResources.Labels_OpenedNewCommunityWindow}" 
                IsVisible="False"
                Style="{StaticResource busyMessage}"/>
     </StackLayout>

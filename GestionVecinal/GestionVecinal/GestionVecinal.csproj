@@ -7,7 +7,7 @@
 		<RootNamespace>GestionVecinal</RootNamespace>
 		<UseMaui>true</UseMaui>
 		<Nullable>enable</Nullable>
-		<AssemblyVersion>1.0.263.0423</AssemblyVersion>
+		<AssemblyVersion>1.0.272.0427</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -51,9 +51,21 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Resources\Localization\AppResources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>AppResources.resx</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\CommunitySelect.xaml.cs">
 	    <DependentUpon>CommunitySelect.xaml</DependentUpon>
 	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Resources\Localization\AppResources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
 	</ItemGroup>
 
 	<ItemGroup>

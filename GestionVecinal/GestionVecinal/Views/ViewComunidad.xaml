@@ -2,9 +2,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GestionVecinal.Views.ViewComunidad"
              Title="{Binding Comunidad.Direccion}"
-             xmlns:mi="http://www.aathifmahir.com/dotnet/2022/maui/icons">
+             xmlns:mi="http://www.aathifmahir.com/dotnet/2022/maui/icons"
+             xmlns:resx="clr-namespace:GestionVecinal.Resources.Localization">
     <TabbedPage.Children>
-        <ContentPage Title="{Binding AppSettings.Labels.ViewComunidadLabels.Comunidad}" HeightRequest="800" >
+        <ContentPage Title="{x:Static resx:AppResources.ViewComunidadLabels_Comunidad}" HeightRequest="800" >
             <Grid Padding="30,15">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -53,7 +54,7 @@
                
         </ContentPage>
 
-        <ContentPage Title="{Binding AppSettings.Labels.ViewComunidadLabels.Miembros}">
+        <ContentPage Title="{x:Static resx:AppResources.ViewComunidadLabels_Miembros}">
             <CollectionView ItemsSource="{Binding Miembros}" HeightRequest="-1" Margin="30,15" HorizontalScrollBarVisibility="Default" ItemsLayout="VerticalList" >
                 <CollectionView.Header >
                     <Grid ColumnDefinitions="50,50,50,*,*,*,*,*,*,*,Auto,Auto">
@@ -96,7 +97,7 @@
             </CollectionView>
         </ContentPage>
 
-        <ContentPage Title="{Binding AppSettings.Labels.ViewComunidadLabels.Presidentes}">
+        <ContentPage Title="{x:Static resx:AppResources.ViewComunidadLabels_Presidentes}">
             <CollectionView ItemsSource="{Binding Presidentes}" HeightRequest="-1"  Margin="30,15" HorizontalScrollBarVisibility="Default" ItemsLayout="VerticalList">
                 <CollectionView.Header >
                     <Grid ColumnDefinitions="*,*,*">
@@ -120,35 +121,35 @@
             </CollectionView>
         </ContentPage>
 
-        <ContentPage Title="{Binding AppSettings.Labels.ViewComunidadLabels.Derramas}">
+        <ContentPage Title="{x:Static resx:AppResources.ViewComunidadLabels_Derramas}">
             <StackLayout>
                 <Label Text="Gestión de Derramas" />
                 <!-- Aquí puedes agregar controles para gestionar la entidad Derrama -->
             </StackLayout>
         </ContentPage>
 
-        <ContentPage Title="{Binding AppSettings.Labels.ViewComunidadLabels.Proveedores}">
+        <ContentPage Title="{x:Static resx:AppResources.ViewComunidadLabels_Proveedores}">
             <StackLayout>
                 <Label Text="Gestión de Facturas" />
                 <!-- Aquí puedes agregar controles para gestionar la entidad Factura -->
             </StackLayout>
         </ContentPage>
 
-        <ContentPage Title="{Binding AppSettings.Labels.ViewComunidadLabels.Facturas}">
+        <ContentPage Title="{x:Static resx:AppResources.ViewComunidadLabels_Facturas}">
             <StackLayout>
                 <Label Text="Gestión de Facturas" />
                 <!-- Aquí puedes agregar controles para gestionar la entidad Factura -->
             </StackLayout>
         </ContentPage>
 
-        <ContentPage Title="{Binding AppSettings.Labels.ViewComunidadLabels.Juntas}">
+        <ContentPage Title="{x:Static resx:AppResources.ViewComunidadLabels_Juntas}">
             <StackLayout>
                 <Label Text="Gestión de Facturas" />
                 <!-- Aquí puedes agregar controles para gestionar la entidad Factura -->
             </StackLayout>
         </ContentPage>
 
-        <ContentPage Title="{Binding AppSettings.Labels.ViewComunidadLabels.Incidencias}">
+        <ContentPage Title="{x:Static resx:AppResources.ViewComunidadLabels_Incidencias}">
             <StackLayout>
                 <Label Text="Gestión de Facturas" />
                 <!-- Aquí puedes agregar controles para gestionar la entidad Factura -->
