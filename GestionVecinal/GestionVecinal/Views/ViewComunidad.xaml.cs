@@ -17,6 +17,7 @@ public partial class ViewComunidad : TabbedPage
     private readonly IProveedoresService _proveedoresService;
     private readonly IFacturasService _facturasService;
     private readonly IPresidenciasService _presidenciasService;
+    private readonly IServiceProvider _serviceProvider;
 
     public ViewComunidad(ViewComunidadViewModel viewModel, 
         IComunidadesService comunidadesService, 
@@ -26,7 +27,8 @@ public partial class ViewComunidad : TabbedPage
         IMiembrosService miembrosService, 
         IProveedoresService proveedoresService, 
         IFacturasService facturasService, 
-        IPresidenciasService presidenciasService)
+        IPresidenciasService presidenciasService,
+        IServiceProvider serviceProvider)
     {
         _viewModel = viewModel;
         _comunidadesService = comunidadesService;
@@ -37,6 +39,7 @@ public partial class ViewComunidad : TabbedPage
         _proveedoresService = proveedoresService;
         _facturasService = facturasService;
         _presidenciasService = presidenciasService;
+        _serviceProvider = serviceProvider;
         GetDatosComunidad().ConfigureAwait(false);
         InitializeComponent();
         BindingContext = _viewModel;
@@ -62,11 +65,20 @@ public partial class ViewComunidad : TabbedPage
         _viewModel.Proveedores = (await _proveedoresService.GetAsync(_viewModel.Comunidad.Id)).Value;
     }
 
-    private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    private void HandleEditCommunityMember(object sender, TappedEventArgs e)
     {
         var icon = (MauiIcon)sender;
         var memberId = icon.ClassId;
         // Aquí puedes agregar la lógica para manejar el evento de clic, por ejemplo, navegar a una página de edición
         Console.WriteLine($"Icono de edición clicado para el miembro con ID: {memberId}");
+        var page = _serviceProvider.GetService<EditCommunityMember>();
+        var window = new Window(page);
+        window.Destroying += OnCloseEditCommunityMember;
+        Application.Current?.OpenWindow(window);
+    }
+
+    private void OnCloseEditCommunityMember(object sender, EventArgs e)
+    {
+        _ = GetDatosComunidad();
     }
 }

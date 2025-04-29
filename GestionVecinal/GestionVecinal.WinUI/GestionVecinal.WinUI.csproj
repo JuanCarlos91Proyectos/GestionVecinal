@@ -18,7 +18,7 @@
 		<EnableDefaultMauiItems>false</EnableDefaultMauiItems>
 		<!-- To develop, package, and publish an app to the Microsoft Store, see: https://aka.ms/MauiTemplateUnpackaged -->
 		<WindowsPackageType>None</WindowsPackageType>
-		<AssemblyVersion>1.0.260.0427</AssemblyVersion>
+		<AssemblyVersion>1.0.268.0429</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>

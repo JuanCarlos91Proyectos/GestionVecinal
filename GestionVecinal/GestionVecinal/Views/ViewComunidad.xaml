@@ -77,7 +77,7 @@
                             <Grid ColumnDefinitions="50,50,50,*,*,*,*,*,*,*,Auto,Auto">
                                 <mi:MauiIcon Icon="{mi:Fluent DocumentEdit20}" Grid.Column="0" ToolTipProperties.Text="Editar miembro" ClassId="{Binding Id}" >
                                     <mi:MauiIcon.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                        <TapGestureRecognizer Tapped="HandleEditCommunityMember"/>
                                     </mi:MauiIcon.GestureRecognizers>
                                 </mi:MauiIcon>
                                 <mi:MauiIcon IsVisible="{Binding EsPresidente}" Icon="{mi:Fluent Star20}" OnPlatforms="WinUI" Grid.Column="1" IconColor="Gold" ToolTipProperties.Text="Presidente"/>
