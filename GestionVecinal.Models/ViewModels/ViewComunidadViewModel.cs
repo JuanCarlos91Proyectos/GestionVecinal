@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestionVecinal.Models.ViewModels
+namespace GestionVecinal.Models
 {
     public partial class ViewComunidadViewModel : BaseViewModel, INotifyPropertyChanged
     {

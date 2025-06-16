@@ -4,7 +4,7 @@ using System.Drawing;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Graphics;
 
-namespace GestionVecinal.Models.ViewModels
+namespace GestionVecinal.Models
 {
     public partial class CommunitySelectViewModel : BaseViewModel, INotifyPropertyChanged
     {
@@ -25,8 +25,8 @@ namespace GestionVecinal.Models.ViewModels
             return button;
         }
 
-        public Button AddNewCommunityButton()
-            => CreateButton("+ Añadir nueva comunidad", "#4CAF50", (Microsoft.Maui.Graphics.Color)Application.Current.Resources["PrimaryPlus"], "");
+        public Button AddNewCommunityButton(string text)
+            => CreateButton(text, "#4CAF50", (Microsoft.Maui.Graphics.Color)Application.Current.Resources["White"], "");
         public Button CreateButton(string text, string background, Microsoft.Maui.Graphics.Color textColor, string id)
         {
             return new()

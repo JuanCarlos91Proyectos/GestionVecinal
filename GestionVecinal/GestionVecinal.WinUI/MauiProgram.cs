@@ -1,14 +1,4 @@
-﻿using GestionVecinal.Models;
-using GestionVecinal.Models.ViewModels;
-using GestionVecinal.Repositories;
-using GestionVecinal.Services;
-using GestionVecinal.Services.Interfaces;
-using GestionVecinal.Services.Mappers;
-using GestionVecinal.Views;
-using Microsoft.Extensions.Configuration;
-using System.Reflection;
-
-namespace GestionVecinal.WinUI
+﻿namespace GestionVecinal.WinUI
 {
     public static class MauiProgram
     {

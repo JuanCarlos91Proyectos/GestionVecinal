@@ -1,7 +1,7 @@
-using GestionVecinal.Models.ViewModels;
+using GestionVecinal.Models;
 using GestionVecinal.Services.Interfaces;
 
-namespace GestionVecinal.Views;
+namespace GestionVecinal;
 
 public partial class AddComunidad : Window
 {

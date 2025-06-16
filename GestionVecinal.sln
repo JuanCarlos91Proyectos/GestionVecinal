@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionVecinal.Services", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionVecinal.Repositories", "GestionVecinal.Repositories\GestionVecinal.Repositories.csproj", "{38618D62-D9A0-4C86-93D1-7B96657E06A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionVecinal.Views", "GestionVecinal.Views\GestionVecinal.Views.csproj", "{6609243E-7DA6-4D03-AA2E-51111AEFE7E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionVecinal.ViewModels", "GestionVecinal.ViewModels\GestionVecinal.ViewModels.csproj", "{DE09F410-CC58-4F00-8391-D1FE241C9691}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{38618D62-D9A0-4C86-93D1-7B96657E06A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38618D62-D9A0-4C86-93D1-7B96657E06A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38618D62-D9A0-4C86-93D1-7B96657E06A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6609243E-7DA6-4D03-AA2E-51111AEFE7E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6609243E-7DA6-4D03-AA2E-51111AEFE7E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6609243E-7DA6-4D03-AA2E-51111AEFE7E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6609243E-7DA6-4D03-AA2E-51111AEFE7E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE09F410-CC58-4F00-8391-D1FE241C9691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE09F410-CC58-4F00-8391-D1FE241C9691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE09F410-CC58-4F00-8391-D1FE241C9691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE09F410-CC58-4F00-8391-D1FE241C9691}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

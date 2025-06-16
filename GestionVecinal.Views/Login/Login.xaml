@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GestionVecinal.Views.Login"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             x:Class="GestionVecinal.Views.Login.Login"
              Title="Login - Gestion Vecinal"
              BackgroundColor="#252525"
-             xmlns:resx="clr-namespace:GestionVecinal.Resources.Localization">
+             xmlns:resx="clr-namespace:GestionVecinal.Views.Resources.Localization"
+             xmlns:vm="clr-namespace:GestionVecinal.ViewModels.Login;assembly=GestionVecinal.ViewModels"
+             x:DataType="vm:LoginViewModel">
     <StackLayout Padding="50">
         <!-- Título -->
         <Label Text="{x:Static resx:AppResources.Labels_Welcome}"
@@ -15,7 +18,7 @@
         <Label Text="{x:Static resx:AppResources.Labels_Username}"
                Style="{StaticResource label}" />
         <!-- Color gris oscuro -->
-        <Entry x:Name="UsernameEntry"
+        <Entry Text="{Binding Username}"
                Placeholder="{x:Static resx:AppResources.PlaceHolders_Username}"
                Style="{StaticResource entry}" />
         <!-- Color gris para el placeholder -->
@@ -23,19 +26,19 @@
         <!-- Campo de Contraseña -->
         <Label Text="{x:Static resx:AppResources.Labels_Password}"
                Style="{StaticResource label}" />
-        <Entry x:Name="PasswordEntry"
+        <Entry Text="{Binding Password}"
                Placeholder="{x:Static resx:AppResources.PlaceHolders_Password}"
                IsPassword="True"
                Style="{StaticResource entry}" />
 
         <!-- Botón de Iniciar Sesión -->
         <Button Text="{x:Static resx:AppResources.Labels_Login}"
-                Clicked="OnLoginClicked"
+                Command="{Binding LoginCommand}"
                 Style="{StaticResource button}" />
 
             <!-- Mensaje de Error -->
-            <Label x:Name="ErrorMessage"
-               IsVisible="False"
+            <Label Text="{Binding ErrorMessage}"
+               IsVisible="{Binding ErrorMessageVisible}"
                Style="{StaticResource errorMessage}" />
     </StackLayout>
 </ContentPage>

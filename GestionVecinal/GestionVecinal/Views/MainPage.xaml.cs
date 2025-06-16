@@ -1,7 +1,7 @@
 ﻿using GestionVecinal.Models;
 using GestionVecinal.Services;
 
-namespace GestionVecinal.Views
+namespace GestionVecinal
 {
     public partial class MainPage : TabbedPage
     {

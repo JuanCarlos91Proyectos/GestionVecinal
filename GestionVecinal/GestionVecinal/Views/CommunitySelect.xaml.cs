@@ -1,8 +1,9 @@
 using GestionVecinal.Models.DTO;
-using GestionVecinal.Models.ViewModels;
+using GestionVecinal.Models;
+using GestionVecinal.Resources.Localization;
 using GestionVecinal.Services.Interfaces;
 
-namespace GestionVecinal.Views;
+namespace GestionVecinal;
 
 public partial class CommunitySelect : ContentPage
 {
@@ -28,7 +29,7 @@ public partial class CommunitySelect : ContentPage
             comunidadButton.Clicked += HandleViewComunidad;
             this.ComunidadesPicker.Children.Add(comunidadButton);
         }
-        Button newCommunityButton = _viewModel.AddNewCommunityButton();
+        Button newCommunityButton = _viewModel.AddNewCommunityButton(AppResources.AddNewCommunity);
         newCommunityButton.Clicked += HandleAddNewCommunity;
         this.ComunidadesPicker.Children.Add(newCommunityButton);
     }

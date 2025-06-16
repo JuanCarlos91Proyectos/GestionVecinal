@@ -22,7 +22,7 @@ namespace GestionVecinal.Resources.Localization {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class AppResources {
+    public class AppResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -57,6 +57,15 @@ namespace GestionVecinal.Resources.Localization {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a + Añadir nueva comunidad.
+        /// </summary>
+        internal static string AddNewCommunity {
+            get {
+                return ResourceManager.GetString("AddNewCommunity", resourceCulture);
             }
         }
         

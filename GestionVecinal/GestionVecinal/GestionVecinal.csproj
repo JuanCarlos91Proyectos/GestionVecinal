@@ -7,7 +7,7 @@
 		<RootNamespace>GestionVecinal</RootNamespace>
 		<UseMaui>true</UseMaui>
 		<Nullable>enable</Nullable>
-		<AssemblyVersion>1.0.281.0429</AssemblyVersion>
+		<AssemblyVersion>1.0.309.0616</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -37,17 +37,18 @@
 		<PackageReference Include="AathifMahir.Maui.MauiIcons.Cupertino" Version="4.0.0" />
 		<PackageReference Include="AathifMahir.Maui.MauiIcons.Fluent" Version="4.0.0" />
 		<PackageReference Include="AathifMahir.Maui.MauiIcons.Material" Version="4.0.0" />
-		<PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.3" />
-		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.3" />
-		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.3" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.50" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.6" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.6" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.6" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.6" />
 		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.80" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <ProjectReference Include="..\..\GestionVecinal.Models\GestionVecinal.Models.csproj" />
 	  <ProjectReference Include="..\..\GestionVecinal.Services\GestionVecinal.Services.csproj" />
+	  <ProjectReference Include="..\..\GestionVecinal.Views\GestionVecinal.Views.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -78,15 +79,16 @@
 	  <MauiXaml Update="Views\EditCommunityMember.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Login.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="Views\CommunitySelect.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\ViewComunidad.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Update="Microsoft.Maui.Controls" Version="9.0.80" />
 	</ItemGroup>
 
 </Project>

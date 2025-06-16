@@ -1,10 +1,10 @@
 using GestionVecinal.Models.DTO;
-using GestionVecinal.Models.ViewModels;
+using GestionVecinal.Models;
 using GestionVecinal.Services.Interfaces;
 using MauiIcons.Core;
 using System.Collections.ObjectModel;
 
-namespace GestionVecinal.Views;
+namespace GestionVecinal;
 
 public partial class ViewComunidad : TabbedPage
 {
@@ -72,8 +72,11 @@ public partial class ViewComunidad : TabbedPage
         // Aquí puedes agregar la lógica para manejar el evento de clic, por ejemplo, navegar a una página de edición
         Console.WriteLine($"Icono de edición clicado para el miembro con ID: {memberId}");
         var page = _serviceProvider.GetService<EditCommunityMember>();
+        page._viewModel.Miembro = _viewModel.Miembros.FirstOrDefault(x => x.Id == int.Parse(memberId));
+        page._viewModel.EditCommunityMemberTitle= $"Editando miembro Piso {page._viewModel.Miembro.Piso} {page._viewModel.Miembro.Puerta} - {page._viewModel.Miembro.Nombre}";
         var window = new Window(page);
         window.Destroying += OnCloseEditCommunityMember;
+        
         Application.Current?.OpenWindow(window);
     }
 

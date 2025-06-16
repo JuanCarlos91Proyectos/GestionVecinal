@@ -1,10 +1,9 @@
-﻿using GestionVecinal.Models.ViewModels;
-using GestionVecinal.Models;
+﻿using GestionVecinal.Models;
 using GestionVecinal.Repositories;
 using GestionVecinal.Services.Interfaces;
 using GestionVecinal.Services.Mappers;
 using GestionVecinal.Services;
-using GestionVecinal.Views;
+using GestionVecinal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System.Reflection;
@@ -12,7 +11,6 @@ using MauiIcons.Fluent;
 using MauiIcons.Material;
 using MauiIcons.Cupertino;
 using System.Globalization;
-using GestionVecinal.Resources.Localization;
 
 namespace GestionVecinal
 {
@@ -61,6 +59,7 @@ namespace GestionVecinal
 
         private static MauiAppBuilder RegisterServices(this MauiAppBuilder builder)
         {
+            builder.Services.AddSingleton<INavigationService, NavigationService>();
             builder.Services.AddTransient<IComunidadesService, ComunidadesService>();
             builder.Services.AddTransient<ILoginService, LoginService>();
             builder.Services.AddTransient<IDerramasService, DerramasService>();
@@ -92,14 +91,14 @@ namespace GestionVecinal
         private static MauiAppBuilder RegisterViewsAndViewModels(this MauiAppBuilder builder)
         {
 
-            builder.Services.AddTransient<Login>();
+            builder.Services.AddTransient<Views.Login.Login>();
             builder.Services.AddTransient<CommunitySelect>();
             builder.Services.AddTransient<AddComunidad>();
             builder.Services.AddTransient<ViewComunidad>();
             builder.Services.AddTransient<EditCommunityMember>();
 
 
-            builder.Services.AddTransient<LoginViewModel>();
+            builder.Services.AddTransient<ViewModels.Login.LoginViewModel>();
             builder.Services.AddTransient<CommunitySelectViewModel>();
             builder.Services.AddTransient<AddComunidadViewModel>();
             builder.Services.AddTransient<ViewComunidadViewModel>();
@@ -135,15 +134,10 @@ namespace GestionVecinal
             builder.Configuration.AddConfiguration(config);
 
             builder.Configuration.GetSection("AppSettings").Get<AppSettings>();
-            AppSettings appSettings = ApplyAppSettingsMessages(config.GetSection("AppSettings").Get<AppSettings>() ?? new AppSettings());
+            //AppSettings appSettings = ApplyAppSettingsMessages(config.GetSection("AppSettings").Get<AppSettings>() ?? new AppSettings());
+            AppSettings appSettings = config.GetSection("AppSettings").Get<AppSettings>() ?? new AppSettings();
             builder.Services.AddSingleton<AppSettings>(appSettings);
             return builder;
-        }
-
-        private static AppSettings ApplyAppSettingsMessages(AppSettings appSettings)
-        {
-            appSettings.ErrorLoginMessage = AppResources.Errors_Login;
-            return appSettings;
         }
     }
 }
