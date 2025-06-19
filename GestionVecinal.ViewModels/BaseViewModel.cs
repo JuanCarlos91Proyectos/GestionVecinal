@@ -27,6 +27,8 @@ namespace GestionVecinal.ViewModels
             set { _errorMessageVisible = value; OnPropertyChanged(nameof(ErrorMessageVisible)); }
         }
 
+        
+
         public event PropertyChangedEventHandler? PropertyChanged;
         public readonly IServiceProvider _serviceProvider;
         public readonly INavigationService _navigationService;

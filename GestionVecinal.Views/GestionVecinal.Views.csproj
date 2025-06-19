@@ -15,7 +15,7 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
-		<AssemblyVersion>1.0.15.0616</AssemblyVersion>
+		<AssemblyVersion>1.0.29.0619</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -29,6 +29,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Community\AddCommunity.xaml.cs">
+	    <DependentUpon>AddCommunity.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Resources\Localization\AppResources.Designer.cs">
 	    <DependentUpon>AppResources.resx</DependentUpon>
 	    <DesignTime>True</DesignTime>
@@ -44,6 +47,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Community\AddCommunity.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Community\CommunitySelect.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Login\Login.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

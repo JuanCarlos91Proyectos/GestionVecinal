@@ -3,6 +3,8 @@ using GestionVecinal.Repositories;
 using GestionVecinal.Services.Interfaces;
 using GestionVecinal.Services.Mappers;
 using GestionVecinal.Services;
+using GestionVecinal.Views;
+using GestionVecinal.ViewModels;
 using GestionVecinal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -59,6 +61,7 @@ namespace GestionVecinal
 
         private static MauiAppBuilder RegisterServices(this MauiAppBuilder builder)
         {
+            builder.Services.AddSingleton<IAddCommunityWindowService, AddCommunityWindowService>();
             builder.Services.AddSingleton<INavigationService, NavigationService>();
             builder.Services.AddTransient<IComunidadesService, ComunidadesService>();
             builder.Services.AddTransient<ILoginService, LoginService>();
@@ -91,16 +94,16 @@ namespace GestionVecinal
         private static MauiAppBuilder RegisterViewsAndViewModels(this MauiAppBuilder builder)
         {
 
-            builder.Services.AddTransient<Views.Login.Login>();
+            builder.Services.AddTransient<Login>();
             builder.Services.AddTransient<CommunitySelect>();
-            builder.Services.AddTransient<AddComunidad>();
+            builder.Services.AddTransient<AddCommunity>();
             builder.Services.AddTransient<ViewComunidad>();
             builder.Services.AddTransient<EditCommunityMember>();
 
 
-            builder.Services.AddTransient<ViewModels.Login.LoginViewModel>();
+            builder.Services.AddTransient<LoginViewModel>();
             builder.Services.AddTransient<CommunitySelectViewModel>();
-            builder.Services.AddTransient<AddComunidadViewModel>();
+            builder.Services.AddTransient<AddCommunityViewModel>();
             builder.Services.AddTransient<ViewComunidadViewModel>();
             builder.Services.AddTransient<EditCommunityMemberViewModel>();
             return builder;

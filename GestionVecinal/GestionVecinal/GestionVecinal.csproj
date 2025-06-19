@@ -7,7 +7,7 @@
 		<RootNamespace>GestionVecinal</RootNamespace>
 		<UseMaui>true</UseMaui>
 		<Nullable>enable</Nullable>
-		<AssemblyVersion>1.0.309.0616</AssemblyVersion>
+		<AssemblyVersion>1.0.323.0619</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -57,9 +57,6 @@
 	    <AutoGen>True</AutoGen>
 	    <DependentUpon>AppResources.resx</DependentUpon>
 	  </Compile>
-	  <Compile Update="Views\CommunitySelect.xaml.cs">
-	    <DependentUpon>CommunitySelect.xaml</DependentUpon>
-	  </Compile>
 	  <Compile Update="Views\EditCommunityMember.xaml.cs">
 	    <DependentUpon>EditCommunityMember.xaml</DependentUpon>
 	  </Compile>
@@ -73,13 +70,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\AddComunidad.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="Views\EditCommunityMember.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\CommunitySelect.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\ViewComunidad.xaml">

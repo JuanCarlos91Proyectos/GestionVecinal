@@ -1,13 +1,11 @@
 using GestionVecinal.Models;
 using GestionVecinal.Services.Interfaces;
-using GestionVecinal.ViewModels.Login;
+using GestionVecinal.ViewModels;
 
-namespace GestionVecinal.Views.Login;
+namespace GestionVecinal.Views;
 
 public partial class Login : ContentPage
-{
-    public readonly LoginViewModel _viewModel;
-    
+{   
     public Login(LoginViewModel viewModel)
 	{
         InitializeComponent();

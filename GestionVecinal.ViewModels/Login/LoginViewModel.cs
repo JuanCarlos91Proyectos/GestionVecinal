@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System.ComponentModel;
 using System.Windows.Input;
 
-namespace GestionVecinal.ViewModels.Login
+namespace GestionVecinal.ViewModels
 {
     public partial class LoginViewModel : BaseViewModel, INotifyPropertyChanged
     {

@@ -10,7 +10,7 @@
 
     <ShellContent
         Title="Login"
-        ContentTemplate="{DataTemplate views:Login.Login}" 
+        ContentTemplate="{DataTemplate views:Login}" 
         Route="Login"/>
 
     <!--<ShellContent Route="communitySelect" ContentTemplate="{DataTemplate local:CommunitySelect}"/>-->
