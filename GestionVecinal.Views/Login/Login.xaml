@@ -32,7 +32,7 @@
                Style="{StaticResource entry}" />
 
         <!-- Botón de Iniciar Sesión -->
-        <Button Text="{x:Static resx:AppResources.Labels_Login}"
+        <Button Text="{x:Static resx:AppResources.Buttons_Login}"
                 Command="{Binding LoginCommand}"
                 Style="{StaticResource button}" />
 

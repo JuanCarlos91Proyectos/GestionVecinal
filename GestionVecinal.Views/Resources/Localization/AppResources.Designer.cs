@@ -70,6 +70,24 @@ namespace GestionVecinal.Views.Resources.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Añadir comunidad.
+        /// </summary>
+        internal static string Buttons_AddCommunity {
+            get {
+                return ResourceManager.GetString("Buttons_AddCommunity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Iniciar Sesión.
+        /// </summary>
+        internal static string Buttons_Login {
+            get {
+                return ResourceManager.GetString("Buttons_Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Las contraseñas no coinciden.
         /// </summary>
         internal static string Errors_Compare {
@@ -133,11 +151,20 @@ namespace GestionVecinal.Views.Resources.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Iniciar Sesión.
+        ///   Busca una cadena traducida similar a Dirección de la comunidad.
         /// </summary>
-        internal static string Labels_Login {
+        internal static string Labels_CommunityDirection {
             get {
-                return ResourceManager.GetString("Labels_Login", resourceCulture);
+                return ResourceManager.GetString("Labels_CommunityDirection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Código postal.
+        /// </summary>
+        internal static string Labels_CP {
+            get {
+                return ResourceManager.GetString("Labels_CP", resourceCulture);
             }
         }
         
@@ -147,6 +174,24 @@ namespace GestionVecinal.Views.Resources.Localization {
         internal static string Labels_Logout {
             get {
                 return ResourceManager.GetString("Labels_Logout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cuota mensual.
+        /// </summary>
+        internal static string Labels_MonthlyFee {
+            get {
+                return ResourceManager.GetString("Labels_MonthlyFee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Número de viviendas.
+        /// </summary>
+        internal static string Labels_NumberHomes {
+            get {
+                return ResourceManager.GetString("Labels_NumberHomes", resourceCulture);
             }
         }
         
@@ -165,6 +210,24 @@ namespace GestionVecinal.Views.Resources.Localization {
         internal static string Labels_Password {
             get {
                 return ResourceManager.GetString("Labels_Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Provincia.
+        /// </summary>
+        internal static string Labels_Province {
+            get {
+                return ResourceManager.GetString("Labels_Province", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Población.
+        /// </summary>
+        internal static string Labels_Town {
+            get {
+                return ResourceManager.GetString("Labels_Town", resourceCulture);
             }
         }
         

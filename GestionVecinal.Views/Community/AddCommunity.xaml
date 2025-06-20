@@ -5,45 +5,46 @@
              x:Class="GestionVecinal.Views.AddCommunity"
              Title="Añadir comunidad"
             Height="650" Width="350"
+            xmlns:resx="clr-namespace:GestionVecinal.Views.Resources.Localization"
             xmlns:vm="clr-namespace:GestionVecinal.ViewModels;assembly=GestionVecinal.ViewModels"
             x:DataType="vm:AddCommunityViewModel">
     <ContentPage BackgroundColor="#252525">
         <StackLayout Padding="0, 30"  Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Start">
-            
-            <Label Text="Dirección de la comunidad" 
+
+            <Label Text="{x:Static resx:AppResources.Labels_CommunityDirection}" 
                    Style="{StaticResource label}"/>
             <Entry x:Name="Direccion" 
                    Text="{Binding Comunidad.Direccion}" 
                    Style="{StaticResource entry}"/>
-            <Label Text="Código Postal" 
+            <Label Text="{x:Static resx:AppResources.Labels_CP}" 
                    Style="{StaticResource label}"/>
             <Entry x:Name="Cp" 
                    Text="{Binding Comunidad.Cp}" 
                    Style="{StaticResource entry}"/>
-            <Label Text="Población" 
+            <Label Text="{x:Static resx:AppResources.Labels_Town}" 
                    Style="{StaticResource label}"/>
             <Entry x:Name="Poblacion" 
                    Text="{Binding Comunidad.Poblacion}"
                    Style="{StaticResource entry}"/>
-            <Label Text="Provincia" 
+            <Label Text="{x:Static resx:AppResources.Labels_Province}" 
                    Style="{StaticResource label}"/>
             <Entry x:Name="Provincia" 
                    Text="{Binding Comunidad.Provincia}"
                    Style="{StaticResource entry}"/>
-            <Label Text="Número de viviendas" 
+            <Label Text="{x:Static resx:AppResources.Labels_NumberHomes}" 
                    Style="{StaticResource label}"/>
             <Entry x:Name="NumeroViviendas" 
                    Text="{Binding Comunidad.NumeroViviendas}" 
                    Style="{StaticResource entry}"
                    Keyboard="Numeric"/>
-            <Label Text="Cuota mensual" 
+            <Label Text="{x:Static resx:AppResources.Labels_MonthlyFee}" 
                    Style="{StaticResource label}"/>
             <Entry x:Name="Cuota" 
                    Text="{Binding Comunidad.Cuota}" 
                    Style="{StaticResource entry}"
                    Keyboard="Numeric"/>
 
-            <Button Text="Añadir comunidad" 
+            <Button Text="{x:Static resx:AppResources.Buttons_AddCommunity}" 
                     Clicked="OnAddComunidadClicked" 
                     Style="{StaticResource button}"/>
         </StackLayout>

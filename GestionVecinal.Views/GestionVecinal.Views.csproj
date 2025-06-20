@@ -64,4 +64,8 @@
 	  </MauiXaml>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Community\ViewCommunityTabs\" />
+	</ItemGroup>
+
 </Project>

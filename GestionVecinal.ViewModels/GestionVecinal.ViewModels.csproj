@@ -27,4 +27,8 @@
 	  <ProjectReference Include="..\GestionVecinal.Services\GestionVecinal.Services.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Community\ViewCommunityTabs\" />
+	</ItemGroup>
+
 </Project>

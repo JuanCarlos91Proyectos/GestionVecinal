@@ -142,7 +142,13 @@
   <data name="Errors_Required" xml:space="preserve">
     <value>Este campo es requerido</value>
   </data>
-  <data name="Labels_Login" xml:space="preserve">
+  <data name="Labels_CP" xml:space="preserve">
+    <value>Código postal</value>
+  </data>
+  <data name="Labels_CommunityDirection" xml:space="preserve">
+    <value>Dirección de la comunidad</value>
+  </data>
+  <data name="Buttons_Login" xml:space="preserve">
     <value>Iniciar Sesión</value>
   </data>
   <data name="Labels_Logout" xml:space="preserve">
@@ -189,5 +195,20 @@
   </data>
   <data name="ViewComunidadLabels_Proveedores" xml:space="preserve">
     <value>Proveedores</value>
+  </data>
+  <data name="Labels_Town" xml:space="preserve">
+    <value>Población</value>
+  </data>
+  <data name="Labels_Province" xml:space="preserve">
+    <value>Provincia</value>
+  </data>
+  <data name="Labels_NumberHomes" xml:space="preserve">
+    <value>Número de viviendas</value>
+  </data>
+  <data name="Labels_MonthlyFee" xml:space="preserve">
+    <value>Cuota mensual</value>
+  </data>
+  <data name="Buttons_AddCommunity" xml:space="preserve">
+    <value>Añadir comunidad</value>
   </data>
 </root>

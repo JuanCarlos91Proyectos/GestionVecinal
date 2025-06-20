@@ -141,7 +141,13 @@
   <data name="Errors_Required" xml:space="preserve">
     <value>This field is required</value>
   </data>
-  <data name="Labels_Login" xml:space="preserve">
+  <data name="Labels_CP" xml:space="preserve">
+    <value>Zip code</value>
+  </data>
+  <data name="Labels_CommunityDirection" xml:space="preserve">
+    <value>Community address</value>
+  </data>
+  <data name="Buttons_Login" xml:space="preserve">
     <value>Sign in</value>
   </data>
   <data name="Labels_Logout" xml:space="preserve">
@@ -188,5 +194,20 @@
   </data>
   <data name="ViewComunidadLabels_Proveedores" xml:space="preserve">
     <value>Suppliers</value>
+  </data>
+  <data name="Labels_Town" xml:space="preserve">
+    <value>Town</value>
+  </data>
+  <data name="Labels_Province" xml:space="preserve">
+    <value>Province</value>
+  </data>
+  <data name="Labels_NumberHomes" xml:space="preserve">
+    <value>Home of homes</value>
+  </data>
+  <data name="Labels_MonthlyFee" xml:space="preserve">
+    <value>Monthly fee</value>
+  </data>
+  <data name="Buttons_AddCommunity" xml:space="preserve">
+    <value>Add Community</value>
   </data>
 </root>
