@@ -97,15 +97,18 @@ namespace GestionVecinal
             builder.Services.AddTransient<Login>();
             builder.Services.AddTransient<CommunitySelect>();
             builder.Services.AddTransient<AddCommunity>();
-            builder.Services.AddTransient<ViewComunidad>();
+            builder.Services.AddTransient<ViewCommunity>();
             builder.Services.AddTransient<EditCommunityMember>();
 
 
             builder.Services.AddTransient<LoginViewModel>();
             builder.Services.AddTransient<CommunitySelectViewModel>();
             builder.Services.AddTransient<AddCommunityViewModel>();
-            builder.Services.AddTransient<ViewComunidadViewModel>();
+            builder.Services.AddTransient<ViewCommunityViewModel>();
             builder.Services.AddTransient<EditCommunityMemberViewModel>();
+            builder.Services.AddTransient<CommunityConfigViewModel>();
+            builder.Services.AddTransient<PresidentsListViewModel>();
+            builder.Services.AddTransient<CommunityMembersViewModel>();
             return builder;
         }
 

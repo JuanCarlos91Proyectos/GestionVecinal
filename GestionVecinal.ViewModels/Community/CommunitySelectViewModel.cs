@@ -153,7 +153,7 @@ namespace GestionVecinal.ViewModels
 
         private async Task HandleViewComunidad(int comunidadId)
         {
-            await _navigationService.GoToAsync("ViewComunidad", new Dictionary<string, object> { ["comunidadId"] = comunidadId });
+            await _navigationService.GoToAsync("ViewCommunity", new Dictionary<string, object> { ["community"] = Comunidades.First(x => x.Id == comunidadId) });
         }
     }
 }

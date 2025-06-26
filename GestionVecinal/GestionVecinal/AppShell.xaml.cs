@@ -13,7 +13,8 @@ namespace GestionVecinal
         public void RegisterRoutes()
         {
             Routing.RegisterRoute(nameof(CommunitySelect), typeof(CommunitySelect));
-            Routing.RegisterRoute(nameof(ViewComunidad), typeof(ViewComunidad));
+            Routing.RegisterRoute(nameof(ViewCommunity), typeof(ViewCommunity));
+            //Routing.RegisterRoute(nameof(CommunityConfig), typeof(CommunityConfig));
         }
     }
 }

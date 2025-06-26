@@ -210,4 +210,7 @@
   <data name="Buttons_AddCommunity" xml:space="preserve">
     <value>Add Community</value>
   </data>
+  <data name="Labels_Direction" xml:space="preserve">
+    <value>Address</value>
+  </data>
 </root>

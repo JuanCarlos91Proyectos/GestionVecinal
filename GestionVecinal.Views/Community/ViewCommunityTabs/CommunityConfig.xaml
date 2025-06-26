@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionVecinal.Views.CommunityConfig"
+             
+             xmlns:resx="clr-namespace:GestionVecinal.Views.Resources.Localization"
+             xmlns:vm="clr-namespace:GestionVecinal.ViewModels;assembly=GestionVecinal.ViewModels"
+             Title="{x:Static resx:AppResources.ViewComunidadLabels_Comunidad}" 
+             HeightRequest="800" 
+             x:DataType="vm:CommunityConfigViewModel">
+    <Grid Padding="30,15">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="120"/>
+        </Grid.RowDefinitions>
+        <Label  Text="{x:Static resx:AppResources.Labels_Direction}" Grid.Row="0" Grid.Column="0"
+            Style="{StaticResource label}"/>
+        <Entry  Text="{Binding Community.Direccion}"   Grid.Row="0" Grid.Column="0"
+            Style="{StaticResource entry}"
+            IsReadOnly="True"/>
+        <Label  Text="{x:Static resx:AppResources.Labels_CP}"  Grid.Row="0" Grid.Column="1"
+            Style="{StaticResource label}"/>
+        <Entry  Text="{Binding Community.Cp}"  Grid.Row="0" Grid.Column="1"
+            Style="{StaticResource entry}"
+            IsReadOnly="True"/>
+        <Label  Text="{x:Static resx:AppResources.Labels_Town}" Grid.Row="1" Grid.Column="0"
+            Style="{StaticResource label}"/>
+        <Entry  Text="{Binding Community.Poblacion}" Grid.Row="1" Grid.Column="0"
+            Style="{StaticResource entry}"
+            IsReadOnly="True"/>
+        <Label  Text="{x:Static resx:AppResources.Labels_Province}" Grid.Row="1" Grid.Column="1"
+            Style="{StaticResource label}"/>
+        <Entry  Text="{Binding Community.Provincia}" Grid.Row="1" Grid.Column="1"
+            Style="{StaticResource entry}"
+            IsReadOnly="True"/>
+        <Label  Text="{x:Static resx:AppResources.Labels_NumberHomes}" Grid.Row="2" Grid.Column="0"
+            Style="{StaticResource label}"/>
+        <Entry  Text="{Binding Community.NumeroViviendas}" Grid.Row="2" Grid.Column="0"
+            Style="{StaticResource entry}"
+            IsReadOnly="True"/>
+        <Label  Text="{x:Static resx:AppResources.Labels_MonthlyFee}" Grid.Row="2" Grid.Column="1"
+            Style="{StaticResource label}"/>
+        <Entry  Text="{Binding Community.Cuota}" Grid.Row="2" Grid.Column="1"
+            Style="{StaticResource entry}"
+            Keyboard="Numeric"/>
+        <Button Text="Editar comunidad" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+            Style="{StaticResource button}"/>
+    </Grid>
+</ContentPage>

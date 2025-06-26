@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="GestionVecinal.Views.AddCommunity"
-             Title="Añadir comunidad"
+             Title="{x:Static resx:AppResources.AddNewCommunity}"
             Height="650" Width="350"
             xmlns:resx="clr-namespace:GestionVecinal.Views.Resources.Localization"
             xmlns:vm="clr-namespace:GestionVecinal.ViewModels;assembly=GestionVecinal.ViewModels"
@@ -13,34 +13,28 @@
 
             <Label Text="{x:Static resx:AppResources.Labels_CommunityDirection}" 
                    Style="{StaticResource label}"/>
-            <Entry x:Name="Direccion" 
-                   Text="{Binding Comunidad.Direccion}" 
+            <Entry Text="{Binding Comunidad.Direccion}" 
                    Style="{StaticResource entry}"/>
             <Label Text="{x:Static resx:AppResources.Labels_CP}" 
                    Style="{StaticResource label}"/>
-            <Entry x:Name="Cp" 
-                   Text="{Binding Comunidad.Cp}" 
+            <Entry Text="{Binding Comunidad.Cp}" 
                    Style="{StaticResource entry}"/>
             <Label Text="{x:Static resx:AppResources.Labels_Town}" 
                    Style="{StaticResource label}"/>
-            <Entry x:Name="Poblacion" 
-                   Text="{Binding Comunidad.Poblacion}"
+            <Entry Text="{Binding Comunidad.Poblacion}"
                    Style="{StaticResource entry}"/>
             <Label Text="{x:Static resx:AppResources.Labels_Province}" 
                    Style="{StaticResource label}"/>
-            <Entry x:Name="Provincia" 
-                   Text="{Binding Comunidad.Provincia}"
+            <Entry Text="{Binding Comunidad.Provincia}"
                    Style="{StaticResource entry}"/>
             <Label Text="{x:Static resx:AppResources.Labels_NumberHomes}" 
                    Style="{StaticResource label}"/>
-            <Entry x:Name="NumeroViviendas" 
-                   Text="{Binding Comunidad.NumeroViviendas}" 
+            <Entry Text="{Binding Comunidad.NumeroViviendas}" 
                    Style="{StaticResource entry}"
                    Keyboard="Numeric"/>
             <Label Text="{x:Static resx:AppResources.Labels_MonthlyFee}" 
                    Style="{StaticResource label}"/>
-            <Entry x:Name="Cuota" 
-                   Text="{Binding Comunidad.Cuota}" 
+            <Entry Text="{Binding Comunidad.Cuota}" 
                    Style="{StaticResource entry}"
                    Keyboard="Numeric"/>
 

@@ -7,7 +7,7 @@
 		<RootNamespace>GestionVecinal</RootNamespace>
 		<UseMaui>true</UseMaui>
 		<Nullable>enable</Nullable>
-		<AssemblyVersion>1.0.323.0619</AssemblyVersion>
+		<AssemblyVersion>1.0.340.0626</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -71,9 +71,6 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="Views\EditCommunityMember.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\ViewComunidad.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

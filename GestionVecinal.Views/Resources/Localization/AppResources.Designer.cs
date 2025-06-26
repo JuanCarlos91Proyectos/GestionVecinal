@@ -169,6 +169,15 @@ namespace GestionVecinal.Views.Resources.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Dirección.
+        /// </summary>
+        internal static string Labels_Direction {
+            get {
+                return ResourceManager.GetString("Labels_Direction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cerrar Sesión.
         /// </summary>
         internal static string Labels_Logout {

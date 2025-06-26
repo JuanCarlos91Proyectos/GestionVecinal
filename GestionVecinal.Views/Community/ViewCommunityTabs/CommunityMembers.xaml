@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionVecinal.Views.CommunityMembers"
+             Title="{x:Static resx:AppResources.ViewComunidadLabels_Miembros}"
+             xmlns:mi="http://www.aathifmahir.com/dotnet/2022/maui/icons"
+             xmlns:resx="clr-namespace:GestionVecinal.Views.Resources.Localization"
+             xmlns:vm="clr-namespace:GestionVecinal.ViewModels;assembly=GestionVecinal.ViewModels"
+             xmlns:dto="clr-namespace:GestionVecinal.Models.DTO;assembly=GestionVecinal.Models"
+             x:DataType="vm:CommunityMembersViewModel">
+    <StackLayout>
+        <Grid BackgroundColor="{StaticResource Primary}" Padding="10"
+              ColumnDefinitions="150,*,Auto" Margin="0,0,0,10">
+            <Label Text="Miembros de la comunidad" FontAttributes="Bold" TextColor="White" VerticalOptions="Center" Grid.Column="1" />
+
+            <Button Text="Añadir"
+                    TextColor="White"
+                    BackgroundColor="Transparent"
+                    FontAttributes="Bold"
+                    Clicked="ToolbarItem_Clicked"
+                    Grid.Column="0"/>
+        </Grid>
+        <CollectionView ItemsSource="{Binding Miembros}" HeightRequest="-1" Margin="30,15" HorizontalScrollBarVisibility="Default" ItemsLayout="VerticalList" >
+            <CollectionView.Header >
+                <Grid ColumnDefinitions="50,50,50,*,*,*,*,*,*,*,Auto,Auto">
+                    <Label Text=" " Grid.Column="0"/>
+                    <Label Text=" " Grid.Column="1"/>
+                    <Label Text=" " Grid.Column="2"/>
+                    <Label Text="Nombre" Grid.Column="3" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                    <Label Text="Apellidos" Grid.Column="4" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                    <Label Text="Piso" Grid.Column="5" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                    <Label Text="Puerta" Grid.Column="6" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                    <Label Text="Telefono" Grid.Column="7" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                    <Label Text="Email" Grid.Column="8" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                    <Label Text="Forma de pago de la cuota" Grid.Column="9" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                </Grid>
+            </CollectionView.Header>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Stroke="{StaticResource TertiaryBrush}" StrokeThickness="4" StrokeShape="RoundRectangle 40,0,0,40"
+                    Background="Transparent" Padding="16,8" HorizontalOptions="Center">
+                        <Grid ColumnDefinitions="50,50,50,*,*,*,*,*,*,*,Auto,Auto" x:DataType="dto:MiembroDTO" x:Name="MembersGrid">
+                            <Button Text="Editar" Grid.Column="0" ClassId="{Binding Id}" />
+                            <Label IsVisible="{Binding EsPresidente}" Text="*" Grid.Column="1" />
+                            <Label IsVisible="{Binding Moroso}" Text="*" Grid.Column="2" />
+                            <Label Text="{Binding Nombre}" Grid.Column="3" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                            <Label Text="{Binding Apellidos}" Grid.Column="4" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                            <Label Text="{Binding Piso}" Grid.Column="5" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                            <Label Text="{Binding Puerta}" Grid.Column="6" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                            <Label Text="{Binding Telefono}" Grid.Column="7" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                            <Label Text="{Binding Email}" Grid.Column="8" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                            <Label Text="{Binding FormaPago}" Grid.Column="9" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+    
+</ContentPage>

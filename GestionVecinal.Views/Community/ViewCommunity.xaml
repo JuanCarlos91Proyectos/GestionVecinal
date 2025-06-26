@@ -1,0 +1,51 @@
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionVecinal.Views.ViewCommunity"
+             xmlns:mi="http://www.aathifmahir.com/dotnet/2022/maui/icons"
+             xmlns:resx="clr-namespace:GestionVecinal.Views.Resources.Localization"
+             xmlns:pages="clr-namespace:GestionVecinal.Views">
+    <TabbedPage.Children>
+        <!--<pages:CommunityConfig />
+
+
+        <ContentPage Title="{x:Static resx:AppResources.ViewComunidadLabels_Derramas}">
+            <StackLayout>
+                <Label Text="Gestión de Derramas" />
+                --><!-- Aquí puedes agregar controles para gestionar la entidad Derrama --><!--
+            </StackLayout>
+        </ContentPage>
+
+        <ContentPage Title="{x:Static resx:AppResources.ViewComunidadLabels_Proveedores}">
+            <StackLayout>
+                <Label Text="Gestión de Facturas" />
+                --><!-- Aquí puedes agregar controles para gestionar la entidad Factura --><!--
+            </StackLayout>
+        </ContentPage>
+
+        <ContentPage Title="{x:Static resx:AppResources.ViewComunidadLabels_Facturas}">
+            <StackLayout>
+                <Label Text="Gestión de Facturas" />
+                --><!-- Aquí puedes agregar controles para gestionar la entidad Factura --><!--
+            </StackLayout>
+        </ContentPage>
+
+        <ContentPage Title="{x:Static resx:AppResources.ViewComunidadLabels_Juntas}">
+            <StackLayout>
+                <Label Text="Gestión de Facturas" />
+                --><!-- Aquí puedes agregar controles para gestionar la entidad Factura --><!--
+            </StackLayout>
+        </ContentPage>
+
+        <ContentPage Title="{x:Static resx:AppResources.ViewComunidadLabels_Incidencias}">
+            <StackLayout>
+                <Label Text="Gestión de Facturas" />
+                --><!-- Aquí puedes agregar controles para gestionar la entidad Factura --><!--
+            </StackLayout>
+        </ContentPage>-->
+
+
+
+        <!-- Repite para las demás entidades (Incidencia, Junta, Miembro, Pago, Presidencia, Proveedor) -->
+
+    </TabbedPage.Children>
+</TabbedPage>
