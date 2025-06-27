@@ -9,48 +9,47 @@
              xmlns:dto="clr-namespace:GestionVecinal.Models.DTO;assembly=GestionVecinal.Models"
              x:DataType="vm:CommunityMembersViewModel">
     <StackLayout>
-        <Grid BackgroundColor="{StaticResource Primary}" Padding="10"
-              ColumnDefinitions="150,*,Auto" Margin="0,0,0,10">
-            <Label Text="Miembros de la comunidad" FontAttributes="Bold" TextColor="White" VerticalOptions="Center" Grid.Column="1" />
+        <Grid BackgroundColor="{StaticResource Gray600}" Padding="10"
+              ColumnDefinitions="100,*,Auto" Margin="0,0,0,10">
 
             <Button Text="Añadir"
-                    TextColor="White"
-                    BackgroundColor="Transparent"
-                    FontAttributes="Bold"
                     Clicked="ToolbarItem_Clicked"
-                    Grid.Column="0"/>
+                    Grid.Column="0"
+                     Style="{StaticResource buttonToolbar}"/>
         </Grid>
         <CollectionView ItemsSource="{Binding Miembros}" HeightRequest="-1" Margin="30,15" HorizontalScrollBarVisibility="Default" ItemsLayout="VerticalList" >
             <CollectionView.Header >
-                <Grid ColumnDefinitions="50,50,50,*,*,*,*,*,*,*,Auto,Auto">
-                    <Label Text=" " Grid.Column="0"/>
-                    <Label Text=" " Grid.Column="1"/>
-                    <Label Text=" " Grid.Column="2"/>
-                    <Label Text="Nombre" Grid.Column="3" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
-                    <Label Text="Apellidos" Grid.Column="4" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
-                    <Label Text="Piso" Grid.Column="5" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
-                    <Label Text="Puerta" Grid.Column="6" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
-                    <Label Text="Telefono" Grid.Column="7" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
-                    <Label Text="Email" Grid.Column="8" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
-                    <Label Text="Forma de pago de la cuota" Grid.Column="9" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                <Grid ColumnDefinitions="*,*,*,*,*,*,*,*,*, 50">
+
+                    <Label Text="Presidente" FontSize="16" Grid.Column="0" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                    <Label Text="Moroso" FontSize="16" Grid.Column="1" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                    <Label Text="Nombre" FontSize="16" Grid.Column="2" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                    <Label Text="Apellidos" FontSize="16" Grid.Column="3" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                    <Label Text="Piso" FontSize="16" Grid.Column="4" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                    <Label Text="Puerta" FontSize="16" Grid.Column="5" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                    <Label Text="Telefono" FontSize="16" Grid.Column="6" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                    <Label Text="Email" FontSize="16" Grid.Column="7" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                    <Label Text="Forma de pago de la cuota" FontSize="16" Grid.Column="8" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                    <Label Text=" " Grid.Column="9"/>
                 </Grid>
             </CollectionView.Header>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Border Stroke="{StaticResource TertiaryBrush}" StrokeThickness="4" StrokeShape="RoundRectangle 40,0,0,40"
                     Background="Transparent" Padding="16,8" HorizontalOptions="Center">
-                        <Grid ColumnDefinitions="50,50,50,*,*,*,*,*,*,*,Auto,Auto" x:DataType="dto:MiembroDTO" x:Name="MembersGrid">
-                            <Button Text="Editar" Grid.Column="0" ClassId="{Binding Id}" />
-                            <Label IsVisible="{Binding EsPresidente}" Text="*" Grid.Column="1" />
-                            <Label IsVisible="{Binding Moroso}" Text="*" Grid.Column="2" />
-                            <Label Text="{Binding Nombre}" Grid.Column="3" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
-                            <Label Text="{Binding Apellidos}" Grid.Column="4" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
-                            <Label Text="{Binding Piso}" Grid.Column="5" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
-                            <Label Text="{Binding Puerta}" Grid.Column="6" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
-                            <Label Text="{Binding Telefono}" Grid.Column="7" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
-                            <Label Text="{Binding Email}" Grid.Column="8" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
-                            <Label Text="{Binding FormaPago}" Grid.Column="9" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                        <Grid ColumnDefinitions="*,*,*,*,*,*,*,*,*, 50" x:DataType="dto:MiembroDTO" x:Name="MembersGrid">
 
+                            <Label IsVisible="{Binding EsPresidente}" FontSize="38" Text="*" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                            <Label IsVisible="{Binding Moroso}" FontSize="38" Text="*" Grid.Column="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}" />
+                            <Label Text="{Binding Nombre}" FontSize="14" Grid.Column="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                            <Label Text="{Binding Apellidos}" FontSize="14" Grid.Column="3" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                            <Label Text="{Binding Piso}" FontSize="14" Grid.Column="4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                            <Label Text="{Binding Puerta}" FontSize="14" Grid.Column="5" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                            <Label Text="{Binding Telefono}" FontSize="14" Grid.Column="6" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                            <Label Text="{Binding Email}" FontSize="14" Grid.Column="7" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                            <Label Text="{Binding FormaPago}" FontSize="14" Grid.Column="8" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                            
+                            <ImageButton Source="edit.png" BackgroundColor="Transparent" BorderColor="White" WidthRequest="50" HeightRequest="50" Grid.Column="9" ClassId="{Binding Id}"/>
                         </Grid>
                     </Border>
                 </DataTemplate>

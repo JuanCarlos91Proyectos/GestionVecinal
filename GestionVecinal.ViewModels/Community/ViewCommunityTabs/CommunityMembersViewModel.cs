@@ -35,7 +35,7 @@ namespace GestionVecinal.ViewModels
         {
             _miembrosService = miembrosService;
             _presidenciasService = presidenciasService;
-            _ = InitialLoad();
+            //_ = InitialLoad();
         }
 
         public async Task InitialLoad()

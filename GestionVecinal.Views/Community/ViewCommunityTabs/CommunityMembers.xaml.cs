@@ -11,6 +11,7 @@ public partial class CommunityMembers : ContentPage
 		InitializeComponent();
         viewModel.CommunityId = communityId;
         BindingContext = _vm = viewModel;
+        _ = _vm.InitialLoad();
     }
 
     private void ToolbarItem_Clicked(object sender, EventArgs e)

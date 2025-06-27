@@ -10,5 +10,6 @@ public partial class PresidentsList : ContentPage
 		InitializeComponent();
         viewModel.CommunityId = communityId;
 		BindingContext = _vm = viewModel;
+        _ = _vm.InitialLoad();
     }
 }

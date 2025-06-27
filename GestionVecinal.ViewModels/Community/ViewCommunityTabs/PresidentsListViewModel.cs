@@ -32,7 +32,6 @@ namespace GestionVecinal.ViewModels
             : base(appSettings, serviceProvider, navigationService)
         {
             _presidenciasService = presidenciasService;
-            _ = InitialLoad();
         }
 
         public async Task InitialLoad()
