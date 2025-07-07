@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace GestionVecinal.ViewModels
 {
-    public class PresidentsListViewModel : BaseViewModel
+    public class CommunityPresidentsListViewModel : BaseViewModel
     {
         private List<PresidenciaDTO> _presidentes = new List<PresidenciaDTO>();
         public List<PresidenciaDTO> Presidentes
@@ -25,7 +25,7 @@ namespace GestionVecinal.ViewModels
         }
 
         private readonly IPresidenciasService _presidenciasService;
-        public PresidentsListViewModel(Models.AppSettings appSettings, 
+        public CommunityPresidentsListViewModel(Models.AppSettings appSettings, 
             IServiceProvider serviceProvider, 
             INavigationService navigationService,
             IPresidenciasService presidenciasService) 

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionVecinal.Views.CommunityHomes"
+             xmlns:resx="clr-namespace:GestionVecinal.Views.Resources.Localization"
+             xmlns:vm="clr-namespace:GestionVecinal.ViewModels;assembly=GestionVecinal.ViewModels"
+             xmlns:dto="clr-namespace:GestionVecinal.Models.DTO;assembly=GestionVecinal.Models"
+             
+             Title="Viviendas">
+    <StackLayout Padding="30,15" Spacing="20">
+        <Grid BackgroundColor="{StaticResource Gray600}" Padding="10"
+              ColumnDefinitions="150,*,Auto" Margin="0,0,0,10">
+
+            <Button Text="Añadir vivienda"
+                    Clicked="Button_Clicked"
+                    Style="{StaticResource buttonToolbar}"
+                    Grid.Column="0"/>
+        </Grid>
+        <!-- Botón añadir vivienda -->
+        
+
+        <!-- Cabecera -->
+        <Grid ColumnDefinitions="*,*,*,*,*,Auto"
+              BackgroundColor="{StaticResource Gray600}"
+              Padding="10">
+            <Label Text="Piso" Grid.Column="0" Style="{StaticResource label}" />
+            <Label Text="Puerta" Grid.Column="1" Style="{StaticResource label}" />
+            <Label Text="Propietario" Grid.Column="4" Style="{StaticResource label}" />
+            <Label Text="Referencia Catastral" Grid.Column="2" Style="{StaticResource label}" />
+            <Label Text="Coeficiente" Grid.Column="3" Style="{StaticResource label}" />
+            
+            <Label Text="" Grid.Column="5" />
+        </Grid>
+
+        <!-- Lista de viviendas -->
+        <!--<CollectionView ItemsSource="{Binding Viviendas}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="dto:ViviendaDTO">
+                    <Grid ColumnDefinitions="*,*,*,*,*,Auto"
+                          Padding="10"
+                          BackgroundColor="{StaticResource Gray100}"
+                          Margin="0,5">
+                        <Label Text="{Binding Piso}" Grid.Column="0" Style="{StaticResource label}" />
+                        <Label Text="{Binding Puerta}" Grid.Column="1" Style="{StaticResource label}" />
+                        <Label Text="{Binding Cuota, StringFormat='{}{0:F2}'}" Grid.Column="2" Style="{StaticResource label}" />
+                        <Label Text="{Binding Coeficiente, StringFormat='{}{0:P2}'}" Grid.Column="3" Style="{StaticResource label}" />
+                        <Label Text="{Binding MiembroNombre}" Grid.Column="4" Style="{StaticResource label}" />
+                        <Button Text="Editar"
+                                Grid.Column="5"
+                                Style="{StaticResource button}"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type vm:CommunityHomesViewModel}}, Path=EditarViviendaCommand}"
+                                CommandParameter="{Binding .}" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>-->
+    </StackLayout>
+</ContentPage>

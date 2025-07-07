@@ -15,7 +15,7 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
-		<AssemblyVersion>1.0.63.0627</AssemblyVersion>
+		<AssemblyVersion>1.0.80.0707</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -37,6 +37,12 @@
 	  </Compile>
 	  <Compile Update="Community\ViewCommunity.xaml.cs">
 	    <DependentUpon>ViewCommunity.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Community\ViewCommunityTabs\EditCommunityMember\EditCommunityMember.xaml.cs">
+	    <DependentUpon>EditCommunityMember.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Community\ViewCommunityTabs\CommunityPresidentsList.xaml.cs">
+	    <DependentUpon>CommunityPresidentsList.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Resources\Localization\AppResources.Designer.cs">
 	    <DependentUpon>AppResources.resx</DependentUpon>
@@ -65,10 +71,16 @@
 	  <MauiXaml Update="Community\ViewCommunity.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Community\ViewCommunityTabs\CommunityHomes.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Community\ViewCommunityTabs\CommunityMembers.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Community\ViewCommunityTabs\PresidentsList.xaml">
+	  <MauiXaml Update="Community\ViewCommunityTabs\EditCommunityMember\EditCommunityMember.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Community\ViewCommunityTabs\CommunityPresidentsList.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Login\Login.xaml">

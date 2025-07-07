@@ -213,4 +213,7 @@
   <data name="Labels_Direction" xml:space="preserve">
     <value>Address</value>
   </data>
+  <data name="ViewComunidadLabels_Viviendas" xml:space="preserve">
+    <value>Homes</value>
+  </data>
 </root>

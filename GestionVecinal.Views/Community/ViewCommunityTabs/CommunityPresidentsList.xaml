@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionVecinal.Views.CommunityPresidentsList"
+             Title="{x:Static resx:AppResources.ViewComunidadLabels_Presidentes}"
+             xmlns:dto="clr-namespace:GestionVecinal.Models.DTO;assembly=GestionVecinal.Models"
+             xmlns:resx="clr-namespace:GestionVecinal.Views.Resources.Localization"
+             xmlns:vm="clr-namespace:GestionVecinal.ViewModels;assembly=GestionVecinal.ViewModels"
+             x:DataType="vm:CommunityPresidentsListViewModel">
+    <StackLayout Padding="30,15" Spacing="20">
+        <Grid ColumnDefinitions="*,*,*"
+              BackgroundColor="{StaticResource Gray600}"
+              Padding="10">
+            <Label Text="Nombre" Grid.Column="0" HorizontalTextAlignment="Center" Style="{StaticResource label}" />
+            <Label Text="Fecha de inicio" Grid.Column="1" HorizontalTextAlignment="Center" Style="{StaticResource label}" />
+            <Label Text="Fecha de fin" Grid.Column="2" HorizontalTextAlignment="Center" Style="{StaticResource label}" />
+        </Grid>
+
+        <CollectionView ItemsSource="{Binding Presidentes}" HeightRequest="-1" HorizontalScrollBarVisibility="Default" ItemsLayout="VerticalList">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Stroke="{StaticResource TertiaryBrush}" StrokeThickness="2" Padding="10"
+                            Background="Transparent" HorizontalOptions="Center"
+                    x:DataType="dto:PresidenciaDTO">
+                        <Grid ColumnDefinitions="*,*,*">
+                            <Label FontSize="16" Text="{Binding Miembro.Nombre}" Grid.Column="0" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                            <Label FontSize="16" Text="{Binding FechaInicio}" Grid.Column="1" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                            <Label FontSize="16" Text="{Binding FechaFin}" Grid.Column="2" HorizontalTextAlignment="Center" TextColor="{StaticResource PrimaryPlus}"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+    
+</ContentPage>

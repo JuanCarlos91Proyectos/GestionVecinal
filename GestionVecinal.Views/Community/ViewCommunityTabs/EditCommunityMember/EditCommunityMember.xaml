@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Window xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionVecinal.Views.EditCommunityMember"
+             Title="EditCommunityMember"
+        xmlns:vm="clr-namespace:GestionVecinal.ViewModels;assembly=GestionVecinal.ViewModels"
+             
+        xmlns:resx="clr-namespace:GestionVecinal.Views.Resources.Localization"
+        x:DataType="vm:EditCommunityMemberViewModel">
+    <ContentPage BackgroundColor="#252525">
+        <Grid Padding="30,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120"/>
+                <RowDefinition Height="120"/>
+                <RowDefinition Height="120"/>
+                <RowDefinition Height="120"/>
+            </Grid.RowDefinitions>
+            <Label  Text="Nombre" Grid.Row="0" Grid.Column="0"
+                Style="{StaticResource label}"/>
+            <Entry  Text="{Binding Miembro.Nombre}"   Grid.Row="0" Grid.Column="0"
+                Style="{StaticResource entry}"/>
+
+            <Label  Text="Apellidos" Grid.Row="0" Grid.Column="1"
+                Style="{StaticResource label}"/>
+            <Entry  Text="{Binding Miembro.Apellidos}"   Grid.Row="0" Grid.Column="1"
+                Style="{StaticResource entry}"/>
+
+            <Label  Text="Piso" Grid.Row="1" Grid.Column="0"
+                Style="{StaticResource label}"/>
+            <Entry  Text="{Binding Miembro.Piso}"   Grid.Row="1" Grid.Column="0"
+                Style="{StaticResource entry}"/>
+            <Label  Text="Puerta" Grid.Row="1" Grid.Column="1"
+                Style="{StaticResource label}"/>
+            <Entry  Text="{Binding Miembro.Puerta}"   Grid.Row="1" Grid.Column="1"
+                Style="{StaticResource entry}"/>
+
+            <Label  Text="Telefono" Grid.Row="2" Grid.Column="0"
+                Style="{StaticResource label}"/>
+            <Entry  Text="{Binding Miembro.Telefono}"   Grid.Row="2" Grid.Column="0"
+                Style="{StaticResource entry}"/>
+            <Label  Text="Email" Grid.Row="2" Grid.Column="1"
+                Style="{StaticResource label}"/>
+            <Entry  Text="{Binding Miembro.Email}"   Grid.Row="2" Grid.Column="1"
+                Style="{StaticResource entry}"/>
+        </Grid>
+    </ContentPage>
+</Window>

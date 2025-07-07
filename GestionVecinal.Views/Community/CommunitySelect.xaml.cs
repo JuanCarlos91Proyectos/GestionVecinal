@@ -70,10 +70,7 @@ public partial class CommunitySelect : ContentPage
                     };
                     CommunityButtonsLayout.Children.Add(button);
                 }
-
-
             }
-
         }
     }
 }

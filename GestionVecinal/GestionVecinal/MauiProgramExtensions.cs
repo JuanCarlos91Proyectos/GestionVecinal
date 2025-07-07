@@ -73,6 +73,7 @@ namespace GestionVecinal
             builder.Services.AddTransient<IJuntasService, JuntasService>();
             builder.Services.AddTransient<IMiembrosService, MiembrosService>();
             builder.Services.AddTransient<IPresidenciasService, PresidenciasService>();
+            builder.Services.AddTransient<IViviendaService , ViviendaService>();
             return builder;
         }
 
@@ -88,6 +89,7 @@ namespace GestionVecinal
             builder.Services.AddTransient<IMiembrosRepository, MiembrosRepository>();
             builder.Services.AddTransient<IPresidenciasRepository, PresidenciasRepository>();
             builder.Services.AddTransient<IProveedoresRepository, ProveedoresRepository>();
+            builder.Services.AddTransient<IViviendaRepository, ViviendaRepository>();
             return builder;
         }
 
@@ -107,7 +109,9 @@ namespace GestionVecinal
             builder.Services.AddTransient<ViewCommunityViewModel>();
             builder.Services.AddTransient<EditCommunityMemberViewModel>();
             builder.Services.AddTransient<CommunityConfigViewModel>();
-            builder.Services.AddTransient<PresidentsListViewModel>();
+
+            //Tabbeds
+            builder.Services.AddTransient<CommunityPresidentsListViewModel>();
             builder.Services.AddTransient<CommunityMembersViewModel>();
             return builder;
         }
@@ -122,6 +126,7 @@ namespace GestionVecinal
             builder.Services.AddAutoMapper(typeof(MiembroMappingProfile));
             builder.Services.AddAutoMapper(typeof(PresidenciaMappingProfile));
             builder.Services.AddAutoMapper(typeof(ProveedorMappingProfile));
+            builder.Services.AddAutoMapper(typeof(ViviendasMappingProfile));
             return builder;
         }
         private static MauiAppBuilder AddAppSettings(this MauiAppBuilder builder)

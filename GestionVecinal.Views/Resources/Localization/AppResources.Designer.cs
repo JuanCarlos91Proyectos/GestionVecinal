@@ -347,5 +347,14 @@ namespace GestionVecinal.Views.Resources.Localization {
                 return ResourceManager.GetString("ViewComunidadLabels_Proveedores", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Viviendas.
+        /// </summary>
+        internal static string ViewComunidadLabels_Viviendas {
+            get {
+                return ResourceManager.GetString("ViewComunidadLabels_Viviendas", resourceCulture);
+            }
+        }
     }
 }

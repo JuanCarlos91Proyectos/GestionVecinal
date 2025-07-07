@@ -2,10 +2,10 @@ using GestionVecinal.ViewModels;
 
 namespace GestionVecinal.Views;
 
-public partial class PresidentsList : ContentPage
+public partial class CommunityPresidentsList : ContentPage
 {
-	private PresidentsListViewModel _vm;
-    public PresidentsList(PresidentsListViewModel viewModel, int communityId)
+	private CommunityPresidentsListViewModel _vm;
+    public CommunityPresidentsList(CommunityPresidentsListViewModel viewModel, int communityId)
 	{
 		InitializeComponent();
         viewModel.CommunityId = communityId;

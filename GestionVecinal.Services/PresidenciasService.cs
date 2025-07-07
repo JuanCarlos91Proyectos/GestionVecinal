@@ -34,6 +34,9 @@ namespace GestionVecinal.Services
                 if (result != null)
                 {
                     var mappedResult = _mapper.Map<List<PresidenciaDTO>>(result);
+                    DateOnly today = DateOnly.FromDateTime(DateTime.Now);
+                    foreach (var president in mappedResult)
+                        president.Miembro.Nombre = president.FechaInicio <= today && president.FechaFin >= today ? string.Concat("*", president.Miembro.Nombre) : president.Miembro.Nombre;
                     response.setValue(mappedResult, true, string.Empty);
                 }
 

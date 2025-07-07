@@ -214,4 +214,7 @@
   <data name="Labels_Direction" xml:space="preserve">
     <value>Dirección</value>
   </data>
+  <data name="ViewComunidadLabels_Viviendas" xml:space="preserve">
+    <value>Viviendas</value>
+  </data>
 </root>
