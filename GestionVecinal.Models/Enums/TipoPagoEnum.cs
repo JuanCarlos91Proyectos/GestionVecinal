@@ -11,9 +11,7 @@ namespace GestionVecinal.Models.Enums
     {
         [Description("Derrama")]
         Derrama = 1,
-        [Description("Multa")]
-        Multa = 2,
         [Description("Cuota")]
-        Cuota = 3
+        Cuota = 2
     }
 }

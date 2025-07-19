@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 namespace GestionVecinal.Repositories.Entities
 {
@@ -8,8 +9,9 @@ namespace GestionVecinal.Repositories.Entities
         public int Id { get; set; }
 
         [NotNull]
+        [ForeignKey(typeof(Comunidad))]
         public int ComunidadId { get; set; }
-        public Comunidad? Comunidad { get; set; }
+        
         [NotNull]
         public string Descripcion { get; set; } = string.Empty;
 
@@ -18,5 +20,8 @@ namespace GestionVecinal.Repositories.Entities
 
         [NotNull]
         public DateTime Fecha { get; set; }
+
+        [OneToOne]
+        public Comunidad? Comunidad { get; set; }
     }
 }

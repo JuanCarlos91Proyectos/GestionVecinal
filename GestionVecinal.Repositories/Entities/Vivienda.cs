@@ -8,8 +8,10 @@ namespace GestionVecinal.Repositories.Entities
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         [NotNull]
+        [ForeignKey(typeof(Comunidad))]
         public int ComunidadId { get; set; }
         [NotNull]
+        [ForeignKey(typeof(Miembro))]
         public int MiembroId { get; set; }
         public string Escalera { get; set; } = string.Empty;
         [NotNull]
@@ -24,6 +26,6 @@ namespace GestionVecinal.Repositories.Entities
         [OneToOne]
         public Comunidad Comunidad { get; set; }
         [OneToOne]
-        public Miembro Miembros { get; set; } = new ();
+        public Miembro? Miembro { get; set; }
     }
 }

@@ -19,8 +19,8 @@ namespace GestionVecinal.Repositories.Entities
 
         
         [OneToMany]
-        public List<Miembro> Miembros { get; set; } = new ();
+        public List<Miembro> Miembros { get; set; } = [];
         [OneToMany]
-        public List<Vivienda> Viviendas { get; set; } = new();
+        public List<Vivienda> Viviendas { get; set; } = [];
     }
 }

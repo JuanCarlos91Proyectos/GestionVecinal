@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 namespace GestionVecinal.Repositories.Entities
 {
@@ -8,11 +9,16 @@ namespace GestionVecinal.Repositories.Entities
         public int Id { get; set; }
 
         [NotNull]
-        public int ProveedorId { get; set; } // Foreign key a Miembros
-        public Proveedor? Proveedor { get; set; }
-
+        [ForeignKey(typeof(Comunidad))]
         public int ComunidadId { get; set; } // Foreign key a Comunidades
-        public Comunidad? Comunidad { get; set; }
+
+        [NotNull]
+        [ForeignKey(typeof(Proveedor))]
+        public int ProveedorId { get; set; } // Foreign key a Miembros
+        
+
+        
+        
 
         [NotNull]
         public double Monto { get; set; } = 0;
@@ -25,7 +31,10 @@ namespace GestionVecinal.Repositories.Entities
 
         public string Descripcion { get; set; } = string.Empty;
 
-        public bool Pagada { get; set; } = false;
+
+
+        public Comunidad? Comunidad { get; set; }
+        public Proveedor? Proveedor { get; set; }
 
     }
 }
