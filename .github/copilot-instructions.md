@@ -1,4 +1,4 @@
-* Seguir buenas prácticas .NET 8
+* Seguir buenas prácticas .NET 9
 * Asegurarse de evitar warnings que puedan afectar a sonar
 * El naming de las clases, interfaces, métodos, propiedades, etc. debe ser en inglés
 * Utilizar lowerCamelCase para los nombres de las propiedades
@@ -12,15 +12,15 @@
 
 ## Proyecto
 
-* El proyecto es .Net 8 basado en Clean Architecture por capas
+* El proyecto es .Net 9 basado en Clean Architecture por capas
 
-  * Proyecto principal
-  * Models
-  * Repositories
-  * Services
-  * ViewModels
-  * Models
-  * WinUI
+  * GestionVecinal
+  * GestionVecinal.Models
+  * GestionVecinal.Repositories
+  * GestionVecinal.Services
+  * GestionVecinal.ViewModels
+  * GestionVecinal.Views
+  * GestionVecinal.WinUI
 
 * Siempre respetar la responsabilidad de cada capa para seguir la arquitectura, utilizar DI e interfaces para poder testar las funcionalidades
 

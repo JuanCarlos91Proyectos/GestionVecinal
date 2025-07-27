@@ -27,7 +27,8 @@ public partial class ViewCommunity : TabbedPage, IQueryAttributable
             this.Children.Add(new CommunityMembers(communityMembersViewModel, community.Id));
             CommunityPresidentsListViewModel CommunityPresidentsListViewModel = _vm._serviceProvider.GetService<CommunityPresidentsListViewModel>();
             this.Children.Add(new CommunityPresidentsList(CommunityPresidentsListViewModel, community.Id));
-            this.Children.Add(new CommunityHomes());
+            CommunityHomesViewModel CommunityHomesViewModel = _vm._serviceProvider.GetService<CommunityHomesViewModel>();
+            this.Children.Add(new CommunityHomes(CommunityHomesViewModel, community.Id));
             // Ahora puedes usar "usuario" y pasarlo a las páginas hijas
             //var home = new HomePage(usuario);
             //var settings = new SettingsPage();

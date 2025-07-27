@@ -17,9 +17,9 @@ namespace GestionVecinal.Repositories
 
         
 
-        public async Task<List<Vivienda>> GetAsync()
+        public async Task<List<Vivienda>> GetAsync(int comunidadId)
         {
-            return await _database.Table<Vivienda>().ToListAsync();
+            return await _database.Table<Vivienda>().Where(x => x.ComunidadId == comunidadId).ToListAsync();
         }
 
         public async Task<bool> AddAsync(Vivienda comunidad)

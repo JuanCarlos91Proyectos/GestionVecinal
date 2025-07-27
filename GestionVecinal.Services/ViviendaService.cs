@@ -23,10 +23,28 @@ namespace GestionVecinal.Services
             _mapper = mapper;
         }
 
-        public async Task<List<ViviendaDTO>> GetAsync()
+        public async Task<Response<List<ViviendaDTO>>> GetAsync(int comunidadId)
         {
-            var result = await _repository.GetAsync();
-            return _mapper.Map<List<ViviendaDTO>>(result);
+            var response = new Response<List<ViviendaDTO>>();
+            try
+            {
+                var result = await _repository.GetAsync(comunidadId);
+                if (result != null)
+                {
+                    var mappedResult = _mapper.Map<List<ViviendaDTO>>(result);
+                    response.setValue(mappedResult, true, string.Empty);
+                }
+
+                else
+                    response.setError("Error al obtener los miembros", string.Empty);
+            }
+            catch (Exception ex)
+            {
+                response.setError(ex.Message, ex.StackTrace);
+                throw ex;
+            }
+
+            return response;
         }
 
         public async Task<Response<bool>> AddAsync(ViviendaDTO vivienda)

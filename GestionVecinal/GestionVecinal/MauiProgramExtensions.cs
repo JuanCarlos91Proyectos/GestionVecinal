@@ -73,7 +73,7 @@ namespace GestionVecinal
             builder.Services.AddTransient<IJuntasService, JuntasService>();
             builder.Services.AddTransient<IMiembrosService, MiembrosService>();
             builder.Services.AddTransient<IPresidenciasService, PresidenciasService>();
-            builder.Services.AddTransient<IViviendaService , ViviendaService>();
+            builder.Services.AddTransient<IViviendaService, ViviendaService>();
             return builder;
         }
 
@@ -113,6 +113,7 @@ namespace GestionVecinal
             //Tabbeds
             builder.Services.AddTransient<CommunityPresidentsListViewModel>();
             builder.Services.AddTransient<CommunityMembersViewModel>();
+            builder.Services.AddTransient<CommunityHomesViewModel>();
             return builder;
         }
 

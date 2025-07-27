@@ -144,6 +144,8 @@ namespace GestionVecinal.ViewModels
 
         private void HandleAddNewCommunity()
         {
+            IsVisible = false; 
+            IsVisibleBusyMessage = true;
             _addCommunityWindowService.OpenAddCommunityWindow(() =>
             {
                 // Esto dispara el evento para que la Vista sepa que debe refrescar

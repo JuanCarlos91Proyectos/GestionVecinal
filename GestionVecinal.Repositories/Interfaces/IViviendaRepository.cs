@@ -9,7 +9,7 @@ namespace GestionVecinal.Repositories
 {
     public interface IViviendaRepository : IBaseRepository
     {
-        Task<List<Vivienda>> GetAsync();
+        Task<List<Vivienda>> GetAsync(int comunidadId);
 
         Task<bool> AddAsync(Vivienda comunidad);
     }
